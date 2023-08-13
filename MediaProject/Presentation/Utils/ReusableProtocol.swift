@@ -17,4 +17,5 @@ extension ReusableProtocol {
 }
 
 extension UICollectionViewCell: ReusableProtocol {}
+extension UITableViewCell: ReusableProtocol {}
 extension UIViewController: ReusableProtocol {}

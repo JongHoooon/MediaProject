@@ -26,6 +26,7 @@ final class MovieListViewController: UIViewController,
         configureCollectionViewLayout()
         
         navigationItem.title = "영화 리스트"
+        navigationItem.backButtonTitle = ""
         
         fetchMovieList()
     }
@@ -58,7 +59,20 @@ extension MovieListViewController: UICollectionViewDataSource {
 }
 
 extension MovieListViewController: UICollectionViewDelegate {
-    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
+        let item = movies[indexPath.row]
+        
+        let vc = MovieDetailViewController.instantiateViewController()
+        vc.movieID = item.id
+        vc.backdropPath = item.backdropPath
+        vc.posterPath = item.posterPath
+        vc.movieTitle = item.title
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 private extension MovieListViewController {

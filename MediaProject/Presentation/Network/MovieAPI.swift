@@ -11,11 +11,13 @@ import Alamofire
 enum MovieAPI {
     case fetchMovieList
     case fetchImage(url: String)
+    case fetchCredits(id: Int)
     
     private var url: String {
         switch self {
-        case .fetchMovieList:           return Endpoint.movies
-        case let .fetchImage(url):      return Endpoint.fetchImage+url
+        case .fetchMovieList:           return Endpoint.url.fetchMovies.string
+        case let .fetchImage(url):      return Endpoint.url.fetchImage(url: url).string
+        case let .fetchCredits(id):     return Endpoint.url.fetchCredits(id: id).string
         }
     }
     
@@ -23,13 +25,14 @@ enum MovieAPI {
         switch self {
         case .fetchMovieList:           return .get
         case .fetchImage:               return .get
+        case .fetchCredits:             return .get
         }
     }
     
     private var headers: HTTPHeaders? {
         var headers: HTTPHeaders = ["accept": "application/json"]
         switch self {
-        case .fetchMovieList:
+        case .fetchMovieList, .fetchCredits:
             headers["Authorization"] = "Bearer \(APIKey.authorization)"
             return headers
         case .fetchImage:
@@ -41,6 +44,7 @@ enum MovieAPI {
         switch self {
         case .fetchMovieList:           return nil
         case .fetchImage:               return nil
+        case .fetchCredits:             return nil
         }
     }
     var request: DataRequest {
