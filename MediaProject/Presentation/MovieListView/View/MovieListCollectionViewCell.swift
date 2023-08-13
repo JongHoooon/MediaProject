@@ -7,16 +7,16 @@
 
 import UIKit
 
-class MovieListCollectionViewCell: UICollectionViewCell {
+final class MovieListCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet var dateLabel: UILabel!
-    @IBOutlet var genreLabel: UILabel!
-    @IBOutlet var contentsBackgroundView: UIView!
-    @IBOutlet var backdropImageView: UIImageView!
-    @IBOutlet var voteLabel: PaddingLabel!
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var separatorView: UIView!
-    @IBOutlet var shadowView: UIView!
+    @IBOutlet private var dateLabel: UILabel!
+    @IBOutlet private var genreLabel: UILabel!
+    @IBOutlet private var contentsBackgroundView: UIView!
+    @IBOutlet private var backdropImageView: UIImageView!
+    @IBOutlet private var voteLabel: PaddingLabel!
+    @IBOutlet private var titleLabel: UILabel!
+    @IBOutlet private var separatorView: UIView!
+    @IBOutlet private var shadowView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,5 +32,51 @@ class MovieListCollectionViewCell: UICollectionViewCell {
         
         separatorView.backgroundColor = .label
     }
-
+    
+    private let genres: [Int: String] = [
+        28: "Actrion",
+        12: "Adventure",
+        16: "Animation",
+        35: "Comedy",
+        80: "Crime",
+        99: "Documentary",
+        18: "Drama",
+        10751: "Family",
+        14: "Fantasy",
+        36: "History",
+        27: "Horror",
+        10402: "Music",
+        9648: "Mystery",
+        10749: "Romance",
+        878: "Science Fiction",
+        10770: "TV Movie",
+        53: "Thriller",
+        10752: "War",
+        37: "Western"
+    ]
+    
+    func configureCell(with item: Movie) {
+        MovieAPI.fetchImage(url: item.backdropPath ?? "").request
+            .responseData(completionHandler: { [weak self] response in
+                switch response.result {
+                case let .success(data):
+                    self?.backdropImageView.image = UIImage(data: data)
+                case let .failure(error):
+                    print(error)
+                }
+            })
+        let releaseDateResponse = item.releaseDate?.split(separator: "-")
+        let year = releaseDateResponse?[0]
+        let month = releaseDateResponse?[1]
+        let day = releaseDateResponse?[2]
+        dateLabel.text = [
+            month,
+            day,
+            year
+        ].map { String($0 ?? "") }
+         .joined(separator: "/")
+        genreLabel.text = genres[item.genreIDS?[0] ?? 28, default: "Movie"]
+        titleLabel.text = item.title
+        voteLabel.text = String(format: "%.1f", item.voteAverage ?? 0)
+    }
 }

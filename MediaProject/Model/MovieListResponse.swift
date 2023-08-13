@@ -7,30 +7,32 @@
 
 import Foundation
 
-struct MovieListResponse: Decodable {
+// MARK: - Welcome
+struct MovieListResponse: Codable {
     let page: Int?
-    let results: [Movie]?
+    let movies: [Movie]?
     let totalPages: Int?
     let totalResults: Int?
 
     enum CodingKeys: String, CodingKey {
         case page
-        case results
+        case movies = "results"
         case totalPages = "total_pages"
         case totalResults = "total_results"
     }
 }
 
-struct Movie: Decodable {
+// MARK: - Result
+struct Movie: Codable {
     let adult: Bool?
     let backdropPath: String?
     let id: Int?
     let title: String?
-    let originalLanguage: OriginalLanguage?
+    let originalLanguage: String?
     let originalTitle: String?
     let overview: String?
     let posterPath: String?
-    let mediaType: MediaType?
+    let mediaType: String?
     let genreIDS: [Int]?
     let popularity: Double?
     let releaseDate: String?
@@ -41,8 +43,7 @@ struct Movie: Decodable {
     enum CodingKeys: String, CodingKey {
         case adult
         case backdropPath = "backdrop_path"
-        case id
-        case title
+        case id, title
         case originalLanguage = "original_language"
         case originalTitle = "original_title"
         case overview
@@ -55,15 +56,4 @@ struct Movie: Decodable {
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }
-}
-
-enum MediaType: String, Decodable {
-    case movie = "movie"
-}
-
-enum OriginalLanguage: String, Decodable {
-    case en = "en"
-    case hi = "hi"
-    case yo = "yo"
-    case zh = "zh"
 }

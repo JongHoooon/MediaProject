@@ -10,8 +10,13 @@ import UIKit
 final class MovieListViewController: UIViewController,
                                      StoryboardInstantiableProtocol {
     
+    // MARK: - Properties
     
-    @IBOutlet var movieListCollectionView: UICollectionView!
+    private var movies: [Movie] = []
+    
+    // MARK: - UI
+    
+    @IBOutlet private var movieListCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +26,8 @@ final class MovieListViewController: UIViewController,
         configureCollectionViewLayout()
         
         navigationItem.title = "영화 리스트"
+        
+        fetchMovieList()
     }
 }
 
@@ -30,7 +37,7 @@ extension MovieListViewController: UICollectionViewDataSource {
         numberOfItemsInSection section: Int
     ) -> Int {
         
-        return 10
+        return movies.count
     }
     
     func collectionView(
@@ -43,10 +50,11 @@ extension MovieListViewController: UICollectionViewDataSource {
             for: indexPath
         ) as? MovieListCollectionViewCell else { return UICollectionViewCell() }
         
+        let item = movies[indexPath.row]
+        cell.configureCell(with: item)
+        
         return cell
     }
-    
-    
 }
 
 extension MovieListViewController: UICollectionViewDelegate {
@@ -100,4 +108,27 @@ private extension MovieListViewController {
         movieListCollectionView.collectionViewLayout = layout
     }
     
+}
+
+private extension MovieListViewController {
+    func fetchMovieList() {
+        MovieAPI.fetchMovieList.request
+            .responseDecodable(
+                of: MovieListResponse.self,
+                completionHandler: { [weak self] response in
+                                        
+                    switch response.result {
+                    case let .success(value):
+                        if let movies = value.movies {
+                            self?.movies = movies
+                            self?.movieListCollectionView.reloadData()
+                        }
+                        
+                        break
+                    case let .failure(error):
+                        print(error)
+                    }
+                }
+            )
+    }
 }
