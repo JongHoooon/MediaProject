@@ -11,6 +11,10 @@
 		EDC3786E2A889DDC00F4EC12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3786D2A889DDC00F4EC12 /* SceneDelegate.swift */; };
 		EDC378752A889DDD00F4EC12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDC378742A889DDD00F4EC12 /* Assets.xcassets */; };
 		EDC378782A889DDD00F4EC12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC378762A889DDD00F4EC12 /* LaunchScreen.storyboard */; };
+		EDC378862A88B38200F4EC12 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC378852A88B38200F4EC12 /* MovieListViewController.swift */; };
+		EDC378882A8927BE00F4EC12 /* MovieListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC378872A8927BE00F4EC12 /* MovieListViewController.storyboard */; };
+		EDC3788B2A89283900F4EC12 /* StoryboardInstantiableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3788A2A89283900F4EC12 /* StoryboardInstantiableProtocol.swift */; };
+		EDC3788D2A89285A00F4EC12 /* ReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3788C2A89285A00F4EC12 /* ReusableProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		EDC378742A889DDD00F4EC12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDC378772A889DDD00F4EC12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDC378792A889DDD00F4EC12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDC378852A88B38200F4EC12 /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
+		EDC378872A8927BE00F4EC12 /* MovieListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieListViewController.storyboard; sourceTree = "<group>"; };
+		EDC3788A2A89283900F4EC12 /* StoryboardInstantiableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiableProtocol.swift; sourceTree = "<group>"; };
+		EDC3788C2A89285A00F4EC12 /* ReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +89,44 @@
 		EDC378812A88B34900F4EC12 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				EDC378822A88B35A00F4EC12 /* MovieListView */,
+				EDC378892A89281100F4EC12 /* Utils */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		EDC378822A88B35A00F4EC12 /* MovieListView */ = {
+			isa = PBXGroup;
+			children = (
+				EDC378832A88B36800F4EC12 /* ViewController */,
+				EDC378842A88B36D00F4EC12 /* View */,
+			);
+			path = MovieListView;
+			sourceTree = "<group>";
+		};
+		EDC378832A88B36800F4EC12 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EDC378852A88B38200F4EC12 /* MovieListViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		EDC378842A88B36D00F4EC12 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EDC378872A8927BE00F4EC12 /* MovieListViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EDC378892A89281100F4EC12 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EDC3788A2A89283900F4EC12 /* StoryboardInstantiableProtocol.swift */,
+				EDC3788C2A89285A00F4EC12 /* ReusableProtocol.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +187,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDC378882A8927BE00F4EC12 /* MovieListViewController.storyboard in Resources */,
 				EDC378782A889DDD00F4EC12 /* LaunchScreen.storyboard in Resources */,
 				EDC378752A889DDD00F4EC12 /* Assets.xcassets in Resources */,
 			);
@@ -155,6 +200,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDC3788B2A89283900F4EC12 /* StoryboardInstantiableProtocol.swift in Sources */,
+				EDC378862A88B38200F4EC12 /* MovieListViewController.swift in Sources */,
+				EDC3788D2A89285A00F4EC12 /* ReusableProtocol.swift in Sources */,
 				EDC3786C2A889DDC00F4EC12 /* AppDelegate.swift in Sources */,
 				EDC3786E2A889DDC00F4EC12 /* SceneDelegate.swift in Sources */,
 			);
