@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		ED9936652A89345B0019EF3F /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9936642A89345B0019EF3F /* PaddingLabel.swift */; };
 		ED9936682A893E420019EF3F /* MovieListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9936672A893E420019EF3F /* MovieListResponse.swift */; };
+		ED99366B2A8940090019EF3F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = ED99366A2A8940090019EF3F /* .gitignore */; };
+		ED99366E2A89404D0019EF3F /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED99366D2A89404D0019EF3F /* APIKey.swift */; };
+		ED9936702A8940580019EF3F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED99366F2A8940580019EF3F /* Endpoint.swift */; };
 		EDC3786C2A889DDC00F4EC12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3786B2A889DDC00F4EC12 /* AppDelegate.swift */; };
 		EDC3786E2A889DDC00F4EC12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3786D2A889DDC00F4EC12 /* SceneDelegate.swift */; };
 		EDC378752A889DDD00F4EC12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDC378742A889DDD00F4EC12 /* Assets.xcassets */; };
@@ -24,6 +27,9 @@
 /* Begin PBXFileReference section */
 		ED9936642A89345B0019EF3F /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		ED9936672A893E420019EF3F /* MovieListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListResponse.swift; sourceTree = "<group>"; };
+		ED99366A2A8940090019EF3F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		ED99366D2A89404D0019EF3F /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		ED99366F2A8940580019EF3F /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		EDC378682A889DDC00F4EC12 /* MediaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC3786B2A889DDC00F4EC12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDC3786D2A889DDC00F4EC12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,9 +63,19 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		ED99366C2A89402F0019EF3F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				ED99366D2A89404D0019EF3F /* APIKey.swift */,
+				ED99366F2A8940580019EF3F /* Endpoint.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		EDC3785F2A889DDC00F4EC12 = {
 			isa = PBXGroup;
 			children = (
+				ED99366A2A8940090019EF3F /* .gitignore */,
 				EDC3786A2A889DDC00F4EC12 /* MediaProject */,
 				EDC378692A889DDC00F4EC12 /* Products */,
 			);
@@ -108,6 +124,7 @@
 			children = (
 				EDC378822A88B35A00F4EC12 /* MovieListView */,
 				EDC378892A89281100F4EC12 /* Utils */,
+				ED99366C2A89402F0019EF3F /* Network */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -207,6 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED99366B2A8940090019EF3F /* .gitignore in Resources */,
 				EDC378882A8927BE00F4EC12 /* MovieListViewController.storyboard in Resources */,
 				EDC378782A889DDD00F4EC12 /* LaunchScreen.storyboard in Resources */,
 				EDC378752A889DDD00F4EC12 /* Assets.xcassets in Resources */,
@@ -225,9 +243,11 @@
 				ED9936652A89345B0019EF3F /* PaddingLabel.swift in Sources */,
 				EDC378902A892A4F00F4EC12 /* MovieListCollectionViewCell.swift in Sources */,
 				EDC378862A88B38200F4EC12 /* MovieListViewController.swift in Sources */,
+				ED9936702A8940580019EF3F /* Endpoint.swift in Sources */,
 				EDC3788D2A89285A00F4EC12 /* ReusableProtocol.swift in Sources */,
 				EDC3786C2A889DDC00F4EC12 /* AppDelegate.swift in Sources */,
 				ED9936682A893E420019EF3F /* MovieListResponse.swift in Sources */,
+				ED99366E2A89404D0019EF3F /* APIKey.swift in Sources */,
 				EDC3786E2A889DDC00F4EC12 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
