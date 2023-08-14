@@ -9,29 +9,7 @@ import UIKit
 
 final class MovieListCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet private var dateLabel: UILabel!
-    @IBOutlet private var genreLabel: UILabel!
-    @IBOutlet private var contentsBackgroundView: UIView!
-    @IBOutlet private var backdropImageView: UIImageView!
-    @IBOutlet private var voteLabel: PaddingLabel!
-    @IBOutlet private var titleLabel: UILabel!
-    @IBOutlet private var separatorView: UIView!
-    @IBOutlet private var shadowView: UIView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        contentsBackgroundView.layer.cornerRadius = 8.0
-        contentsBackgroundView.clipsToBounds = true
-        
-        shadowView.layer.cornerRadius = 8.0
-        shadowView.layer.borderColor = UIColor.black.cgColor
-        shadowView.layer.shadowOpacity = 0.5
-        shadowView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        shadowView.layer.shadowRadius = 8.0
-        
-        separatorView.backgroundColor = .label
-    }
+    // MARK: - Properties
     
     private let genres: [Int: String] = [
         28: "Actrion",
@@ -55,28 +33,75 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
         37: "Western"
     ]
     
+    // MARK: - UI
+    
+    @IBOutlet private var dateLabel: UILabel!
+    @IBOutlet private var genreLabel: UILabel!
+    @IBOutlet private var contentsBackgroundView: UIView!
+    @IBOutlet private var backdropImageView: UIImageView!
+    @IBOutlet private var voteLabel: PaddingLabel!
+    @IBOutlet private var titleLabel: UILabel!
+    @IBOutlet private var castsLabel: UILabel!
+    @IBOutlet private var separatorView: UIView!
+    @IBOutlet private var shadowView: UIView!
+    
+    // MARK: - Lifecycle
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        contentsBackgroundView.layer.cornerRadius = 8.0
+        contentsBackgroundView.clipsToBounds = true
+        
+        shadowView.layer.cornerRadius = 8.0
+        shadowView.layer.borderColor = UIColor.black.cgColor
+        shadowView.layer.shadowOpacity = 0.5
+        shadowView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        shadowView.layer.shadowRadius = 8.0
+        
+        separatorView.backgroundColor = .label
+    }
+    
+    override func prepareForReuse() {
+        backdropImageView.image = nil
+    }
+
     func configureCell(with item: Movie) {
-        MovieAPI.fetchImage(url: item.backdropPath ?? "").request
-            .responseData(completionHandler: { [weak self] response in
-                switch response.result {
-                case let .success(data):
-                    self?.backdropImageView.image = UIImage(data: data)
-                case let .failure(error):
-                    print(error)
-                }
-            })
-        let releaseDateResponse = item.releaseDate?.split(separator: "-")
-        let year = releaseDateResponse?[0]
-        let month = releaseDateResponse?[1]
-        let day = releaseDateResponse?[2]
+        let backdropURL = MovieAPI.fetchImage(url: item.backdropPath).url
+        backdropImageView.fetchImage(
+            urlString: backdropURL,
+            placeholder: MPImage.Placeholder.movie
+        )
+        let releaseDateResponse = item.releaseDate.split(separator: "-")
+        let year = releaseDateResponse[0]
+        let month = releaseDateResponse[1]
+        let day = releaseDateResponse[2]
         dateLabel.text = [
             month,
             day,
             year
         ].map { String($0 ?? "") }
          .joined(separator: "/")
-        genreLabel.text = genres[item.genreIDS?[0] ?? 28, default: "Movie"]
+        genreLabel.text = genres[item.genreIDS[0], default: "Movie"]
         titleLabel.text = item.title
-        voteLabel.text = String(format: "%.1f", item.voteAverage ?? 0)
+        voteLabel.text = String(format: "%.1f", item.voteAverage)
+        
+        MovieManager.shared
+            .callRequest(
+                movieAPI: .fetchCredits(id: item.id),
+                completionHandler: { [weak self] (creditResponse: CreditResponseDTO) in
+                    if let castDTOs = creditResponse.cast {
+                        let casts = castDTOs.map { $0.toCast() }
+                        let castsText = casts.prefix(4)
+                            .map { $0.name }
+                            .joined(separator: ", ")
+                        
+                        self?.castsLabel.text = castsText
+                    }
+                },
+                errrorHandler: { error in
+                    print(error)
+                }
+            )
     }
 }

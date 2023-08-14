@@ -20,16 +20,16 @@ class DetailTableViewCell: UITableViewCell {
         profileImageView.clipsToBounds = true
     }
     
+    override func prepareForReuse() {
+        profileImageView.image = nil
+    }
+    
     func configureCell(with row: Cast) {
-        MovieAPI.fetchImage(url: row.profilePath ?? "").request
-            .responseData(completionHandler: { [weak self] response in
-                switch response.result {
-                case let .success(value):
-                    self?.profileImageView.image = UIImage(data: value)
-                case let .failure(error):
-                    print(error)
-                }
-            })
+        let profileImageURL = MovieAPI.fetchImage(url: row.profilePath).url
+        profileImageView.fetchImage(
+            urlString: profileImageURL,
+            placeholder: MPImage.Placeholder.person
+        )
         nameLabel.text = row.name
         infoLabel.text = row.character
     }

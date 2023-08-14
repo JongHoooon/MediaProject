@@ -1,16 +1,13 @@
 //
-//  Movie.swift
+//  MovieListResponseDTO.swift
 //  MediaProject
 //
 //  Created by JongHoon on 2023/08/14.
 //
 
-import Foundation
-
-// MARK: - Welcome
-struct MovieListResponse: Codable {
+struct MovieListResponseDTO: Codable {
     let page: Int?
-    let movies: [Movie]?
+    let movies: [MovieDTO]?
     let totalPages: Int?
     let totalResults: Int?
 
@@ -23,7 +20,7 @@ struct MovieListResponse: Codable {
 }
 
 // MARK: - Result
-struct Movie: Codable {
+struct MovieDTO: Codable {
     let adult: Bool?
     let backdropPath: String?
     let id: Int?
@@ -55,5 +52,22 @@ struct Movie: Codable {
         case video
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
+    }
+    
+    func toMovie() -> Movie {
+        return Movie(
+            adult: self.adult ?? false,
+            backdropPath: self.backdropPath ?? "",
+            id: self.id ?? 0,
+            title: self.title ?? "",
+            originalTitle: self.originalTitle ?? "",
+            overview: self.overview ?? "",
+            posterPath: self.posterPath ?? "",
+            mediaType: self.mediaType ?? "",
+            genreIDS: self.genreIDS ?? [],
+            popularity: self.popularity ?? 0,
+            releaseDate: self.releaseDate ?? "",
+            voteAverage: self.voteAverage ?? 0
+        )
     }
 }

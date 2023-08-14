@@ -8,7 +8,8 @@
 import UIKit
 
 final class MovieDetailViewController: UIViewController,
-                                       StoryboardInstantiableProtocol {
+                                       StoryboardInstantiableProtocol,
+                                       AlertableProtocol {
     
     // MARK: - Properties
     
@@ -38,6 +39,13 @@ final class MovieDetailViewController: UIViewController,
         detailTableView.rowHeight = 80.0
         registerCell()
         configureTableView()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        backdropImageView.image = nil
+        posterImageView.image = nil
     }
 }
 
@@ -97,43 +105,30 @@ private extension MovieDetailViewController {
 private extension MovieDetailViewController {
     
     func configureImageViews() {
-        MovieAPI.fetchImage(url: backdropPath).request
-            .responseData(completionHandler: { [weak self] response in
-                switch response.result {
-                case let .success(data):
-                    self?.backdropImageView.image = UIImage(data: data)
-                case let .failure(error):
-                    print(error)
-                }
-            })
+        let backdropURL = MovieAPI.fetchImage(url: backdropPath).url
+        let posterURL = MovieAPI.fetchImage(url: posterPath).url
         
-        MovieAPI.fetchImage(url: posterPath).request
-            .responseData(completionHandler: { [weak self] response in
-                switch response.result {
-                case let .success(data):
-                    self?.posterImageView.image = UIImage(data: data)
-                case let .failure(error):
-                    print(error)
-                }
-            })
+        backdropImageView.fetchImage(
+            urlString: backdropURL,
+            placeholder: MPImage.Placeholder.movie
+        )
+        posterImageView.fetchImage(
+            urlString: posterURL,
+            placeholder: MPImage.Placeholder.movie
+        )
     }
         
     func fetchCredits(id: Int) {
-        MovieAPI.fetchCredits(id: id).request
-            .responseDecodable(
-                of: CreditResponse.self,
-                completionHandler: { [weak self] response in
-                    switch response.result {
-                    case let .success(value):
-                        print(value)
-                        if let casts = value.cast {
-                            self?.casts = casts
-                            self?.detailTableView.reloadData()
-                        }
-                        
-                    case let .failure(error):
-                        print(error)
-                    }
-                })
+        MovieManager.shared.callRequest(
+            movieAPI: .fetchCredits(id: id),
+            completionHandler: { [weak self] (creditResponse: CreditResponseDTO) in
+                if let castDTOs = creditResponse.cast {
+                    self?.casts = castDTOs.map { $0.toCast() }
+                    self?.detailTableView.reloadData()
+                }
+            },
+            errrorHandler: { [weak self] error in
+                self?.presentAFError(error: error)
+            })
     }
 }

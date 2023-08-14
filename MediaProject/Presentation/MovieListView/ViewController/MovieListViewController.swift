@@ -8,11 +8,13 @@
 import UIKit
 
 final class MovieListViewController: UIViewController,
-                                     StoryboardInstantiableProtocol {
+                                     StoryboardInstantiableProtocol,
+                                     AlertableProtocol {
     
     // MARK: - Properties
     
     private var movies: [Movie] = []
+    private var casts: [[Cast]] = []
     
     // MARK: - UI
     
@@ -98,15 +100,19 @@ private extension MovieListViewController {
         let defaultInset = 16.0
         let smallInset = 4.0
         let dateLabelHeight = 13.0
+        let castLabelHeight = 15.0
         let titleLabelHeight = 17.0
         let width = UIScreen.main.bounds.width
         let height = defaultInset +
-        dateLabelHeight +
-        smallInset +
-        titleLabelHeight +
-        defaultInset +
-        width +
-        defaultInset
+            dateLabelHeight +
+            smallInset +
+            titleLabelHeight +
+            smallInset +
+            castLabelHeight +
+            defaultInset +
+            defaultInset +
+            width +
+            defaultInset
         layout.itemSize = CGSize(
             width: width,
             height: height
@@ -126,23 +132,19 @@ private extension MovieListViewController {
 
 private extension MovieListViewController {
     func fetchMovieList() {
-        MovieAPI.fetchMovieList.request
-            .responseDecodable(
-                of: MovieListResponse.self,
-                completionHandler: { [weak self] response in
-                                        
-                    switch response.result {
-                    case let .success(value):
-                        if let movies = value.movies {
-                            self?.movies = movies
-                            self?.movieListCollectionView.reloadData()
-                        }
-                        
-                        break
-                    case let .failure(error):
-                        print(error)
-                    }
+        MovieManager.shared.callRequest(
+            movieAPI: .fetchMovieList,
+            completionHandler: { [weak self] (movieListResponse: MovieListResponseDTO) in
+                if let movieDTOs = movieListResponse.movies {
+                    let movies = movieDTOs.map { $0.toMovie() }
+                    self?.movies = movies
+                    self?.movieListCollectionView.reloadData()
                 }
-            )
+            },
+            errrorHandler: { [weak self] error in
+                self?.presentAFError(error: error)
+            }
+        )
     }
+    
 }

@@ -8,12 +8,20 @@
 import Foundation
 import Alamofire
 
-enum MovieAPI {
+protocol MovieAPIableProtocol {
+    var url: String { get }
+    var method: HTTPMethod { get }
+    var parameters: [String: Any]? { get }
+    var headers: HTTPHeaders? { get }
+    var request: DataRequest { get }
+}
+
+enum MovieAPI: MovieAPIableProtocol {
     case fetchMovieList
     case fetchImage(url: String)
     case fetchCredits(id: Int)
     
-    private var url: String {
+    var url: String {
         switch self {
         case .fetchMovieList:           return Endpoint.url.fetchMovies.string
         case let .fetchImage(url):      return Endpoint.url.fetchImage(url: url).string
@@ -21,15 +29,23 @@ enum MovieAPI {
         }
     }
     
-    private var method: HTTPMethod {
+    var method: HTTPMethod {
         switch self {
         case .fetchMovieList:           return .get
         case .fetchImage:               return .get
         case .fetchCredits:             return .get
         }
     }
+     
+    var parameters: [String: Any]? {
+        switch self {
+        case .fetchMovieList:           return nil
+        case .fetchImage:               return nil
+        case .fetchCredits:             return nil
+        }
+    }
     
-    private var headers: HTTPHeaders? {
+    var headers: HTTPHeaders? {
         var headers: HTTPHeaders = ["accept": "application/json"]
         switch self {
         case .fetchMovieList, .fetchCredits:
@@ -39,14 +55,7 @@ enum MovieAPI {
             return nil
         }
     }
-    
-    private var parameters: [String: Any]? {
-        switch self {
-        case .fetchMovieList:           return nil
-        case .fetchImage:               return nil
-        case .fetchCredits:             return nil
-        }
-    }
+
     var request: DataRequest {
         return AF.request(
             self.url,
@@ -54,5 +63,12 @@ enum MovieAPI {
             parameters: self.parameters,
             headers: self.headers
         )
+    }
+    
+    var dto: Decodable.Type {
+        switch self {
+        case .fetchMovieList:       return MovieListResponseDTO.self
+        default:                    return MovieListResponseDTO.self
+        }
     }
 }
