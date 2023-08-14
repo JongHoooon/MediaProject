@@ -20,20 +20,23 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="Uo0-49-DzS">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="194"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="208"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CQ6-ec-GGR">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="194"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="209.33333333333334"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="260" id="1Q6-fF-lVS"/>
+                                            </constraints>
                                         </imageView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q8x-ko-250">
-                                            <rect key="frame" x="20.000000000000007" y="58.333333333333329" width="90.666666666666686" height="135.66666666666669"/>
+                                            <rect key="frame" x="20.000000000000007" y="60.666666666666671" width="97.666666666666686" height="146.66666666666663"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="Q8x-ko-250" secondAttribute="height" multiplier="2:3" id="mhc-vZ-uLq"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMM-WW-800">
-                                            <rect key="frame" x="16" y="13.666666666666666" width="361" height="28.666666666666671"/>
+                                            <rect key="frame" x="16" y="16" width="361" height="28.666666666666671"/>
                                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -42,15 +45,15 @@
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="vMM-WW-800" secondAttribute="trailing" constant="16" id="05r-fZ-37u"/>
-                                        <constraint firstAttribute="bottom" secondItem="Q8x-ko-250" secondAttribute="bottom" id="0MC-by-NBJ"/>
                                         <constraint firstItem="vMM-WW-800" firstAttribute="leading" secondItem="Uo0-49-DzS" secondAttribute="leading" constant="16" id="BfZ-I2-P3l"/>
                                         <constraint firstItem="CQ6-ec-GGR" firstAttribute="leading" secondItem="Uo0-49-DzS" secondAttribute="leading" id="FCR-C2-3O4"/>
                                         <constraint firstItem="Q8x-ko-250" firstAttribute="leading" secondItem="Uo0-49-DzS" secondAttribute="leading" constant="20" id="I26-8Q-2A8"/>
+                                        <constraint firstItem="vMM-WW-800" firstAttribute="top" secondItem="Uo0-49-DzS" secondAttribute="top" constant="16" id="OCM-vu-WaX"/>
                                         <constraint firstAttribute="trailing" secondItem="CQ6-ec-GGR" secondAttribute="trailing" id="j4w-cs-X1I"/>
                                         <constraint firstItem="Q8x-ko-250" firstAttribute="height" secondItem="CQ6-ec-GGR" secondAttribute="height" multiplier="0.7" id="l9t-G1-GhV"/>
                                         <constraint firstItem="CQ6-ec-GGR" firstAttribute="top" secondItem="Uo0-49-DzS" secondAttribute="top" id="oyf-Ff-ath"/>
-                                        <constraint firstAttribute="bottom" secondItem="CQ6-ec-GGR" secondAttribute="bottom" id="u3C-5O-Fad"/>
                                         <constraint firstItem="Q8x-ko-250" firstAttribute="top" secondItem="vMM-WW-800" secondAttribute="bottom" constant="16" id="vNg-L8-F6k"/>
+                                        <constraint firstItem="Q8x-ko-250" firstAttribute="width" secondItem="CQ6-ec-GGR" secondAttribute="width" multiplier="0.248516" id="wqA-89-oUM"/>
                                     </constraints>
                                 </view>
                             </tableView>

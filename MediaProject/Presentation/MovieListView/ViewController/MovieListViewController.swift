@@ -72,6 +72,7 @@ extension MovieListViewController: UICollectionViewDelegate {
         vc.backdropPath = item.backdropPath
         vc.posterPath = item.posterPath
         vc.movieTitle = item.title
+        vc.overview = item.overview
         
         navigationController?.pushViewController(vc, animated: true)
     }

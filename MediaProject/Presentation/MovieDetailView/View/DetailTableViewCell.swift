@@ -18,6 +18,7 @@ class DetailTableViewCell: UITableViewCell {
         
         profileImageView.layer.cornerRadius = 8.0
         profileImageView.clipsToBounds = true
+        selectionStyle = .none
     }
     
     override func prepareForReuse() {
@@ -28,7 +29,8 @@ class DetailTableViewCell: UITableViewCell {
         let profileImageURL = MovieAPI.fetchImage(url: row.profilePath).url
         profileImageView.fetchImage(
             urlString: profileImageURL,
-            placeholder: MPImage.Placeholder.person
+            placeholder: MPImage.Placeholder.person,
+            backgroundColorForError: .systemGray5
         )
         nameLabel.text = row.name
         infoLabel.text = row.character

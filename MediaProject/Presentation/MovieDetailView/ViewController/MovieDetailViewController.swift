@@ -17,7 +17,17 @@ final class MovieDetailViewController: UIViewController,
     var posterPath: String!
     var movieTitle: String!
     var movieID: Int!
+    var overview: String!
     private var casts: [Cast] = []
+    
+    private var isViewMoreButtonTapped = false
+    lazy var viewMoreButtonTapped: ((Bool) -> Void) = { [weak self] tapped in
+        self?.isViewMoreButtonTapped = tapped
+        self?.detailTableView.reloadRows(
+            at: [IndexPath(row: 0, section: 0)],
+            with: .automatic
+        )
+    }
     
     // MARK: - UI
     
@@ -36,7 +46,6 @@ final class MovieDetailViewController: UIViewController,
         configureImageViews()
         fetchCredits(id: movieID)
         
-        detailTableView.rowHeight = 80.0
         registerCell()
         configureTableView()
     }
@@ -56,22 +65,35 @@ extension MovieDetailViewController: UITableViewDataSource {
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        return casts.count
+        return casts.count + 1
     }
     
     func tableView(
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: DetailTableViewCell.identifier,
-            for: indexPath
-        ) as? DetailTableViewCell else { return UITableViewCell() }
         
-        let row = casts[indexPath.row]
-        cell.configureCell(with: row)
-        
-        return cell
+        switch indexPath.row {
+        case 0:
+            guard let infoCell = tableView.dequeueReusableCell(
+                withIdentifier: InfoTableViewCell.identifier,
+                for: indexPath
+            ) as? InfoTableViewCell else { return UITableViewCell() }
+            
+            infoCell.isViewMoreButtonTapped = isViewMoreButtonTapped
+            infoCell.viewMoreButtonTapped = viewMoreButtonTapped
+            infoCell.overview = overview
+            return infoCell
+        default:
+            guard let castCell = tableView.dequeueReusableCell(
+                withIdentifier: DetailTableViewCell.identifier,
+                for: indexPath
+            ) as? DetailTableViewCell else { return UITableViewCell() }
+            
+            let row = casts[indexPath.row-1]
+            castCell.configureCell(with: row)
+            return castCell
+        }
     }
 }
 
@@ -86,12 +108,20 @@ extension MovieDetailViewController: UITableViewDelegate {
 
 private extension MovieDetailViewController {
     func registerCell() {
-        let nib = UINib(
+        let infoNib = UINib(
+            nibName: InfoTableViewCell.identifier,
+            bundle: nil
+        )
+        detailTableView.register(
+            infoNib,
+            forCellReuseIdentifier: InfoTableViewCell.identifier
+        )
+        let castNib = UINib(
             nibName: DetailTableViewCell.identifier,
             bundle: nil
         )
         detailTableView.register(
-            nib,
+            castNib,
             forCellReuseIdentifier: DetailTableViewCell.identifier
         )
     }

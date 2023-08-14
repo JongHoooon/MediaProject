@@ -14,4 +14,9 @@ enum MPImage {
         static let person = UIImage(systemName: "person.fill")?
             .withTintColor(.systemGray, renderingMode: .alwaysOriginal)
     }
+    
+    enum System {
+        static let chevronDown = "chevron.down"
+        static let chevronUp = "chevron.up"
+    }
 }
