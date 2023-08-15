@@ -14,7 +14,6 @@ final class MovieListViewController: UIViewController,
     // MARK: - Properties
     
     private var movies: [Movie] = []
-    private var casts: [[Cast]] = []
     
     // MARK: - UI
     
