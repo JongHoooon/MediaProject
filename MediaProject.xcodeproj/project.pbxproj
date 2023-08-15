@@ -161,6 +161,7 @@
 				ED064FC22A895AC600C79FBF /* DetailTableViewCell.swift */,
 				ED064FC32A895AC600C79FBF /* DetailTableViewCell.xib */,
 				ED96A8282A8A4DC500104D44 /* InfoTableViewCell.swift */,
+				ED96A8292A8A4DC500104D44 /* InfoTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -254,10 +255,9 @@
 		EDC378892A89281100F4EC12 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				ED96A8292A8A4DC500104D44 /* InfoTableViewCell.xib */,
+				ED9936642A89345B0019EF3F /* PaddingLabel.swift */,
 				EDC3788A2A89283900F4EC12 /* StoryboardInstantiableProtocol.swift */,
 				EDC3788C2A89285A00F4EC12 /* ReusableProtocol.swift */,
-				ED9936642A89345B0019EF3F /* PaddingLabel.swift */,
 				ED96A81D2A8A35D400104D44 /* AlertableProtocol.swift */,
 				ED96A81F2A8A395B00104D44 /* ImageFetchableProtocol.swift */,
 			);
