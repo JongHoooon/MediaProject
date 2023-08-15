@@ -125,6 +125,8 @@ private extension MovieDetailViewController {
     }
 }
 
+// MARK: - Private Method
+
 private extension MovieDetailViewController {
     
     func configureImageViews() {

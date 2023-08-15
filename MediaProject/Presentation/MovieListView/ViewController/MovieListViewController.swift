@@ -128,9 +128,6 @@ private extension MovieListViewController {
         movieListCollectionView.collectionViewLayout = layout
     }
     
-}
-
-private extension MovieListViewController {
     func fetchMovieList() {
         MovieManager.shared.callRequest(
             movieAPI: .fetchMovieList,
@@ -146,5 +143,4 @@ private extension MovieListViewController {
             }
         )
     }
-    
 }
