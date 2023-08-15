@@ -7,7 +7,7 @@
 
 import Alamofire
 
-final class MovieManager: MovieManagerableProtocol {
+final class MovieManager: ManagerableProtocol {
     
     static var shared = MovieManager()
     private init() {}
