@@ -140,11 +140,11 @@ private extension MovieDetailViewController {
         
         backdropImageView.fetchImage(
             urlString: backdropURL,
-            placeholder: MPImage.Placeholder.movie
+            placeholder: MPImage.PlaceholderImage.movie
         )
         posterImageView.fetchImage(
             urlString: posterURL,
-            placeholder: MPImage.Placeholder.movie
+            placeholder: MPImage.PlaceholderImage.movie
         )
     }
         

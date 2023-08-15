@@ -8,14 +8,14 @@
 import UIKit
 
 enum MPImage {
-    enum Placeholder {
+    enum PlaceholderImage {
         static let movie = UIImage(systemName: "popcorn.fill")?
             .withTintColor(.systemGray, renderingMode: .alwaysOriginal)
         static let person = UIImage(systemName: "person.fill")?
             .withTintColor(.systemGray, renderingMode: .alwaysOriginal)
     }
     
-    enum System {
+    enum SystemName {
         static let chevronDown = "chevron.down"
         static let chevronUp = "chevron.up"
     }

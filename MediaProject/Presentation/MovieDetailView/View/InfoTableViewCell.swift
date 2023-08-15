@@ -25,14 +25,14 @@ class InfoTableViewCell: UITableViewCell {
             case true:
                 overViewLabel.numberOfLines = 0
                 viewMoreButton.setImage(
-                    UIImage(systemName: MPImage.System.chevronUp),
+                    UIImage(systemName: MPImage.SystemName.chevronUp),
                     for: .normal
                 )
                 
             case false:
                 overViewLabel.numberOfLines = 2
                 viewMoreButton.setImage(
-                    UIImage(systemName: MPImage.System.chevronDown),
+                    UIImage(systemName: MPImage.SystemName.chevronDown),
                     for: .normal
                 )
             }

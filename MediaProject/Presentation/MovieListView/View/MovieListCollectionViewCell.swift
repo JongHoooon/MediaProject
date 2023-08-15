@@ -70,7 +70,7 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
         let backdropURL = MovieAPI.fetchImage(url: item.backdropPath).url
         backdropImageView.fetchImage(
             urlString: backdropURL,
-            placeholder: MPImage.Placeholder.movie
+            placeholder: MPImage.PlaceholderImage.movie
         )
         let releaseDateResponse = item.releaseDate.split(separator: "-")
         let year = releaseDateResponse[0]

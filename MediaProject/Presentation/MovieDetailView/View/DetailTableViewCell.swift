@@ -29,7 +29,7 @@ class DetailTableViewCell: UITableViewCell {
         let profileImageURL = MovieAPI.fetchImage(url: row.profilePath).url
         profileImageView.fetchImage(
             urlString: profileImageURL,
-            placeholder: MPImage.Placeholder.person,
+            placeholder: MPImage.PlaceholderImage.person,
             backgroundColorForError: .systemGray5
         )
         nameLabel.text = row.name
