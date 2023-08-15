@@ -49,13 +49,6 @@ final class MovieDetailViewController: UIViewController,
         registerCell()
         configureTableView()
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        backdropImageView.image = nil
-        posterImageView.image = nil
-    }
 }
 
 // MARK: - Table View
