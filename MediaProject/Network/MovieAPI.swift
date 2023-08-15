@@ -56,11 +56,4 @@ enum MovieAPI: APIableProtocol {
             headers: self.headers
         )
     }
-    
-    var dto: Decodable.Type {
-        switch self {
-        case .fetchMovieList:       return MovieListResponseDTO.self
-        default:                    return MovieListResponseDTO.self
-        }
-    }
 }
