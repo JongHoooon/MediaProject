@@ -20,6 +20,7 @@
 		ED96A8262A8A452A00104D44 /* MPImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED96A8252A8A452A00104D44 /* MPImage.swift */; };
 		ED96A82A2A8A4DC500104D44 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED96A8282A8A4DC500104D44 /* InfoTableViewCell.swift */; };
 		ED96A82B2A8A4DC500104D44 /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED96A8292A8A4DC500104D44 /* InfoTableViewCell.xib */; };
+		ED96A82D2A8B003300104D44 /* APIableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED96A82C2A8B003300104D44 /* APIableProtocol.swift */; };
 		ED9936652A89345B0019EF3F /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9936642A89345B0019EF3F /* PaddingLabel.swift */; };
 		ED9936682A893E420019EF3F /* MovieListResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9936672A893E420019EF3F /* MovieListResponseDTO.swift */; };
 		ED99366B2A8940090019EF3F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = ED99366A2A8940090019EF3F /* .gitignore */; };
@@ -55,6 +56,7 @@
 		ED96A8252A8A452A00104D44 /* MPImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPImage.swift; sourceTree = "<group>"; };
 		ED96A8282A8A4DC500104D44 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		ED96A8292A8A4DC500104D44 /* InfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTableViewCell.xib; sourceTree = "<group>"; };
+		ED96A82C2A8B003300104D44 /* APIableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIableProtocol.swift; sourceTree = "<group>"; };
 		ED9936642A89345B0019EF3F /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		ED9936672A893E420019EF3F /* MovieListResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListResponseDTO.swift; sourceTree = "<group>"; };
 		ED99366A2A8940090019EF3F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				ED99366D2A89404D0019EF3F /* APIKey.swift */,
 				ED99366F2A8940580019EF3F /* Endpoint.swift */,
+				ED96A82C2A8B003300104D44 /* APIableProtocol.swift */,
 				ED99367D2A89462E0019EF3F /* MovieAPI.swift */,
 				ED064FCF2A89ED6100C79FBF /* DTO */,
 				ED064FCE2A89EC5600C79FBF /* Manager */,
@@ -346,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED96A82D2A8B003300104D44 /* APIableProtocol.swift in Sources */,
 				ED064FCD2A89EC5000C79FBF /* MovieManager.swift in Sources */,
 				EDC3788B2A89283900F4EC12 /* StoryboardInstantiableProtocol.swift in Sources */,
 				ED96A82A2A8A4DC500104D44 /* InfoTableViewCell.swift in Sources */,

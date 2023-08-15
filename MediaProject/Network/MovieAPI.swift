@@ -8,15 +8,7 @@
 import Foundation
 import Alamofire
 
-protocol MovieAPIableProtocol {
-    var url: String { get }
-    var method: HTTPMethod { get }
-    var parameters: [String: Any]? { get }
-    var headers: HTTPHeaders? { get }
-    var request: DataRequest { get }
-}
-
-enum MovieAPI: MovieAPIableProtocol {
+enum MovieAPI: APIableProtocol {
     case fetchMovieList
     case fetchImage(url: String)
     case fetchCredits(id: Int)
