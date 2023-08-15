@@ -38,12 +38,14 @@ enum MovieAPI: APIableProtocol {
     }
     
     var headers: HTTPHeaders? {
-        var headers: HTTPHeaders = ["accept": "application/json"]
+        var headers: HTTPHeaders = [Header.accept.dict]
         switch self {
         case .fetchMovieList, .fetchCredits:
-            headers["Authorization"] = "Bearer \(APIKey.authorization)"
+            headers.add(Header.authorization.dict)
+            
             return headers
         case .fetchImage:
+            
             return nil
         }
     }

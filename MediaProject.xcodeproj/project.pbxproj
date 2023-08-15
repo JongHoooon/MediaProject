@@ -39,6 +39,7 @@
 		EDC378902A892A4F00F4EC12 /* MovieListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3788E2A892A4F00F4EC12 /* MovieListCollectionViewCell.swift */; };
 		EDC378912A892A4F00F4EC12 /* MovieListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDC3788F2A892A4F00F4EC12 /* MovieListCollectionViewCell.xib */; };
 		EDDE759D2A8B09A100C3D536 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE759C2A8B09A100C3D536 /* Endpoint.swift */; };
+		EDDE759F2A8B0A1D00C3D536 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE759E2A8B0A1D00C3D536 /* Header.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		EDC3788E2A892A4F00F4EC12 /* MovieListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCollectionViewCell.swift; sourceTree = "<group>"; };
 		EDC3788F2A892A4F00F4EC12 /* MovieListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieListCollectionViewCell.xib; sourceTree = "<group>"; };
 		EDDE759C2A8B09A100C3D536 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		EDDE759E2A8B0A1D00C3D536 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			children = (
 				ED99366D2A89404D0019EF3F /* APIKey.swift */,
 				EDDE759C2A8B09A100C3D536 /* Endpoint.swift */,
+				EDDE759E2A8B0A1D00C3D536 /* Header.swift */,
 				ED96A82C2A8B003300104D44 /* APIableProtocol.swift */,
 				ED99367D2A89462E0019EF3F /* MovieAPI.swift */,
 				ED064FCF2A89ED6100C79FBF /* DTO */,
@@ -362,6 +365,7 @@
 				EDC3786C2A889DDC00F4EC12 /* AppDelegate.swift in Sources */,
 				ED9936682A893E420019EF3F /* MovieListResponseDTO.swift in Sources */,
 				ED99366E2A89404D0019EF3F /* APIKey.swift in Sources */,
+				EDDE759F2A8B0A1D00C3D536 /* Header.swift in Sources */,
 				ED96A81E2A8A35D400104D44 /* AlertableProtocol.swift in Sources */,
 				EDDE759D2A8B09A100C3D536 /* Endpoint.swift in Sources */,
 				ED96A8222A8A3B0B00104D44 /* Cast.swift in Sources */,
