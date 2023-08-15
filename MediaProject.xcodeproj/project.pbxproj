@@ -24,7 +24,6 @@
 		ED9936682A893E420019EF3F /* MovieListResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9936672A893E420019EF3F /* MovieListResponseDTO.swift */; };
 		ED99366B2A8940090019EF3F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = ED99366A2A8940090019EF3F /* .gitignore */; };
 		ED99366E2A89404D0019EF3F /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED99366D2A89404D0019EF3F /* APIKey.swift */; };
-		ED9936702A8940580019EF3F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED99366F2A8940580019EF3F /* Endpoint.swift */; };
 		ED99367A2A89444A0019EF3F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = ED9936792A89444A0019EF3F /* Alamofire */; };
 		ED99367E2A89462E0019EF3F /* MovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED99367D2A89462E0019EF3F /* MovieAPI.swift */; };
 		ED9936852A8957420019EF3F /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9936842A8957410019EF3F /* MovieDetailViewController.swift */; };
@@ -39,6 +38,7 @@
 		EDC3788D2A89285A00F4EC12 /* ReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3788C2A89285A00F4EC12 /* ReusableProtocol.swift */; };
 		EDC378902A892A4F00F4EC12 /* MovieListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3788E2A892A4F00F4EC12 /* MovieListCollectionViewCell.swift */; };
 		EDC378912A892A4F00F4EC12 /* MovieListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDC3788F2A892A4F00F4EC12 /* MovieListCollectionViewCell.xib */; };
+		EDDE759D2A8B09A100C3D536 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE759C2A8B09A100C3D536 /* Endpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,7 +59,6 @@
 		ED9936672A893E420019EF3F /* MovieListResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListResponseDTO.swift; sourceTree = "<group>"; };
 		ED99366A2A8940090019EF3F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		ED99366D2A89404D0019EF3F /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
-		ED99366F2A8940580019EF3F /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		ED99367D2A89462E0019EF3F /* MovieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPI.swift; sourceTree = "<group>"; };
 		ED9936842A8957410019EF3F /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		ED9936862A89576A0019EF3F /* MovieDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieDetailViewController.storyboard; sourceTree = "<group>"; };
@@ -75,6 +74,7 @@
 		EDC3788C2A89285A00F4EC12 /* ReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableProtocol.swift; sourceTree = "<group>"; };
 		EDC3788E2A892A4F00F4EC12 /* MovieListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCollectionViewCell.swift; sourceTree = "<group>"; };
 		EDC3788F2A892A4F00F4EC12 /* MovieListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieListCollectionViewCell.xib; sourceTree = "<group>"; };
+		EDDE759C2A8B09A100C3D536 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				ED99366D2A89404D0019EF3F /* APIKey.swift */,
-				ED99366F2A8940580019EF3F /* Endpoint.swift */,
+				EDDE759C2A8B09A100C3D536 /* Endpoint.swift */,
 				ED96A82C2A8B003300104D44 /* APIableProtocol.swift */,
 				ED99367D2A89462E0019EF3F /* MovieAPI.swift */,
 				ED064FCF2A89ED6100C79FBF /* DTO */,
@@ -356,7 +356,6 @@
 				ED064FC42A895AC600C79FBF /* DetailTableViewCell.swift in Sources */,
 				EDC378862A88B38200F4EC12 /* MovieListViewController.swift in Sources */,
 				ED9936852A8957420019EF3F /* MovieDetailViewController.swift in Sources */,
-				ED9936702A8940580019EF3F /* Endpoint.swift in Sources */,
 				ED064FC72A895F0900C79FBF /* CreditResponseDTO.swift in Sources */,
 				ED96A8262A8A452A00104D44 /* MPImage.swift in Sources */,
 				EDC3788D2A89285A00F4EC12 /* ReusableProtocol.swift in Sources */,
@@ -364,6 +363,7 @@
 				ED9936682A893E420019EF3F /* MovieListResponseDTO.swift in Sources */,
 				ED99366E2A89404D0019EF3F /* APIKey.swift in Sources */,
 				ED96A81E2A8A35D400104D44 /* AlertableProtocol.swift in Sources */,
+				EDDE759D2A8B09A100C3D536 /* Endpoint.swift in Sources */,
 				ED96A8222A8A3B0B00104D44 /* Cast.swift in Sources */,
 				ED96A8202A8A395B00104D44 /* ImageFetchableProtocol.swift in Sources */,
 				ED064FCA2A89EC2700C79FBF /* ManagerableProtocol.swift in Sources */,
