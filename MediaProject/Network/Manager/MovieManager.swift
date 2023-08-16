@@ -14,8 +14,7 @@ final class MovieManager: ManagerableProtocol {
     
     func callRequest<T: Decodable>(
         movieAPI: MovieAPI,
-        completionHandler: @escaping (T) -> Void,
-        errrorHandler: @escaping (AFError) -> Void
+        completionHandler: @escaping (Result<T, AFError>) -> Void
     ) {
         movieAPI.request
             .responseDecodable(
@@ -23,9 +22,9 @@ final class MovieManager: ManagerableProtocol {
                 completionHandler: { response in
                     switch response.result {
                     case let .success(value):
-                        completionHandler(value)
+                        completionHandler(.success(value))
                     case let .failure(error):
-                        errrorHandler(error)
+                        completionHandler(.failure(error))
                     }
                 }
             )

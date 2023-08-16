@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Alamofire
+
 final class MovieListViewController: UIViewController,
                                      StoryboardInstantiableProtocol,
                                      AlertableProtocol {
@@ -131,15 +133,17 @@ private extension MovieListViewController {
     func fetchMovieList() {
         MovieManager.shared.callRequest(
             movieAPI: .fetchMovieList,
-            completionHandler: { [weak self] (movieListResponse: MovieListResponseDTO) in
-                if let movieDTOs = movieListResponse.movies {
-                    let movies = movieDTOs.map { $0.toMovie() }
-                    self?.movies = movies
-                    self?.movieListCollectionView.reloadData()
+            completionHandler: { [weak self] (result: Result<MovieListResponseDTO, AFError>) in
+                switch result {
+                case let .success(movieListResponse):
+                    if let movieDTOs = movieListResponse.movies {
+                        let movies = movieDTOs.map { $0.toMovie() }
+                        self?.movies = movies
+                        self?.movieListCollectionView.reloadData()
+                    }
+                case let .failure(error):
+                    self?.presentAFError(error: error)
                 }
-            },
-            errrorHandler: { [weak self] error in
-                self?.presentAFError(error: error)
             }
         )
     }

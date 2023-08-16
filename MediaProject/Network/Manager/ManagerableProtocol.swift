@@ -14,7 +14,6 @@ protocol ManagerableProtocol {
     static var shared: Self { get }
     func callRequest<T: Decodable>(
         movieAPI: APIable,
-        completionHandler: @escaping (T) -> Void,
-        errrorHandler: @escaping (AFError) -> Void
+        completionHandler: @escaping (Result<T, AFError>) -> Void
     )
 }
