@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--TV-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="TVListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="TVListViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MhK-sG-hDS">
-                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Enb-ID-2t4">
                                     <size key="itemSize" width="128" height="128"/>
@@ -37,7 +37,8 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="MhK-sG-hDS" secondAttribute="trailing" id="se0-ZA-v4z"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="tv.inset.filled" catalog="system" id="zQs-l2-O2W"/>
+                    <tabBarItem key="tabBarItem" title="TV" image="tv.inset.filled" catalog="system" id="zQs-l2-O2W"/>
+                    <navigationItem key="navigationItem" id="0pt-sy-YlF"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tvListCollectionView" destination="MhK-sG-hDS" id="hyE-CV-Z3V"/>
@@ -45,7 +46,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="77" y="4"/>
+            <point key="canvasLocation" x="1008.3969465648854" y="4.9295774647887329"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7IX-Xn-YjG">
+            <objects>
+                <navigationController storyboardIdentifier="TVListNAV" automaticallyAdjustsScrollViewInsets="NO" id="Zpr-6l-3gw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VDA-Ri-NDz">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="cg4-ne-5Fq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vdN-Sk-BEf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="81.679389312977094" y="4.9295774647887329"/>
         </scene>
     </scenes>
     <resources>

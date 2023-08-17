@@ -25,6 +25,7 @@ struct VideoDTO: Codable {
     let backdropPath: String?
     let id: Int?
     let title: String?
+    let name: String?
     let originalLanguage: String?
     let originalTitle: String?
     let overview: String?
@@ -40,7 +41,7 @@ struct VideoDTO: Codable {
     enum CodingKeys: String, CodingKey {
         case adult
         case backdropPath = "backdrop_path"
-        case id, title
+        case id, title, name
         case originalLanguage = "original_language"
         case originalTitle = "original_title"
         case overview
@@ -55,11 +56,19 @@ struct VideoDTO: Codable {
     }
     
     func toVideo() -> Video {
+        var videoTitle = ""
+        if let title = title {
+            videoTitle = title
+        }
+        if let name = name {
+            videoTitle = name
+        }
+        
         return Video(
             adult: self.adult ?? false,
             backdropPath: self.backdropPath ?? "",
             id: self.id ?? 0,
-            title: self.title ?? "",
+            title: videoTitle,
             originalTitle: self.originalTitle ?? "",
             overview: self.overview ?? "",
             posterPath: self.posterPath ?? "",

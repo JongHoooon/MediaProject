@@ -76,16 +76,18 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
             urlString: backdropURL,
             placeholder: MPImage.PlaceholderImage.movie
         )
-        let releaseDateResponse = item.releaseDate.split(separator: "-")
-        let year = releaseDateResponse[0]
-        let month = releaseDateResponse[1]
-        let day = releaseDateResponse[2]
-        dateLabel.text = [
-            month,
-            day,
-            year
-        ].map { String($0 ?? "") }
-         .joined(separator: "/")
+        if !item.releaseDate.isEmpty {
+            let releaseDateResponse = item.releaseDate.split(separator: "-")
+            let year = releaseDateResponse[0]
+            let month = releaseDateResponse[1]
+            let day = releaseDateResponse[2]
+            dateLabel.text = [
+                month,
+                day,
+                year
+            ].map { String($0 ?? "") }
+                .joined(separator: "/")
+        }
         genreLabel.text = genres[item.genreIDS[0], default: "Movie"]
         titleLabel.text = item.title
         voteLabel.text = String(format: "%.1f", item.voteAverage)
@@ -102,6 +104,8 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
                             .joined(separator: ", ")
                         
                         self?.castsLabel.text = castsText
+                    } else {
+                        self?.castsLabel.text = ""
                     }
                 case let .failure(error):
                     print(error.errorDescription ?? "알 수 없는 오류입니다.")
