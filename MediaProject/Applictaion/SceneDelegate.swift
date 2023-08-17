@@ -20,9 +20,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let vc = MovieListViewController.instantiateViewController()
-        let nav = UINavigationController(rootViewController: vc)
-        window?.rootViewController = nav
+        let sb = UIStoryboard(
+            name: "MediaTabBarViewController",
+            bundle: nil
+        )
+        let vc = sb.instantiateViewController(
+            withIdentifier: "MediaTabBarViewController"
+        )
+        window?.rootViewController = vc
         
         window?.makeKeyAndVisible()
     }

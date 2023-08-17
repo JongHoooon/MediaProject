@@ -28,6 +28,7 @@
 		ED99367E2A89462E0019EF3F /* MovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED99367D2A89462E0019EF3F /* MovieAPI.swift */; };
 		ED9936852A8957420019EF3F /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9936842A8957410019EF3F /* MovieDetailViewController.swift */; };
 		ED9936872A89576A0019EF3F /* MovieDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED9936862A89576A0019EF3F /* MovieDetailViewController.storyboard */; };
+		EDB0FA2F2A8E325200861AC1 /* MediaTabBarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB0FA2E2A8E325200861AC1 /* MediaTabBarViewController.storyboard */; };
 		EDC3786C2A889DDC00F4EC12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3786B2A889DDC00F4EC12 /* AppDelegate.swift */; };
 		EDC3786E2A889DDC00F4EC12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3786D2A889DDC00F4EC12 /* SceneDelegate.swift */; };
 		EDC378752A889DDD00F4EC12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDC378742A889DDD00F4EC12 /* Assets.xcassets */; };
@@ -38,6 +39,8 @@
 		EDC3788D2A89285A00F4EC12 /* ReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3788C2A89285A00F4EC12 /* ReusableProtocol.swift */; };
 		EDC378902A892A4F00F4EC12 /* MovieListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3788E2A892A4F00F4EC12 /* MovieListCollectionViewCell.swift */; };
 		EDC378912A892A4F00F4EC12 /* MovieListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDC3788F2A892A4F00F4EC12 /* MovieListCollectionViewCell.xib */; };
+		EDC601902A8E34E60021FF3C /* TVListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC6018F2A8E34E60021FF3C /* TVListViewController.swift */; };
+		EDC601942A8E35120021FF3C /* TVListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC601932A8E35120021FF3C /* TVListViewController.storyboard */; };
 		EDDE759D2A8B09A100C3D536 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE759C2A8B09A100C3D536 /* Endpoint.swift */; };
 		EDDE759F2A8B0A1D00C3D536 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE759E2A8B0A1D00C3D536 /* Header.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +66,7 @@
 		ED99367D2A89462E0019EF3F /* MovieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPI.swift; sourceTree = "<group>"; };
 		ED9936842A8957410019EF3F /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		ED9936862A89576A0019EF3F /* MovieDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieDetailViewController.storyboard; sourceTree = "<group>"; };
+		EDB0FA2E2A8E325200861AC1 /* MediaTabBarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MediaTabBarViewController.storyboard; sourceTree = "<group>"; };
 		EDC378682A889DDC00F4EC12 /* MediaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC3786B2A889DDC00F4EC12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDC3786D2A889DDC00F4EC12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 		EDC3788C2A89285A00F4EC12 /* ReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableProtocol.swift; sourceTree = "<group>"; };
 		EDC3788E2A892A4F00F4EC12 /* MovieListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCollectionViewCell.swift; sourceTree = "<group>"; };
 		EDC3788F2A892A4F00F4EC12 /* MovieListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieListCollectionViewCell.xib; sourceTree = "<group>"; };
+		EDC6018F2A8E34E60021FF3C /* TVListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVListViewController.swift; sourceTree = "<group>"; };
+		EDC601932A8E35120021FF3C /* TVListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TVListViewController.storyboard; sourceTree = "<group>"; };
 		EDDE759C2A8B09A100C3D536 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		EDDE759E2A8B0A1D00C3D536 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +175,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		EDB0FA2D2A8E322E00861AC1 /* TabBarView */ = {
+			isa = PBXGroup;
+			children = (
+				EDB0FA2E2A8E325200861AC1 /* MediaTabBarViewController.storyboard */,
+			);
+			path = TabBarView;
+			sourceTree = "<group>";
+		};
 		EDC3785F2A889DDC00F4EC12 = {
 			isa = PBXGroup;
 			children = (
@@ -221,8 +235,9 @@
 		EDC378812A88B34900F4EC12 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				EDC378822A88B35A00F4EC12 /* MovieListView */,
-				ED9936812A8957050019EF3F /* MovieDetailView */,
+				EDB0FA2D2A8E322E00861AC1 /* TabBarView */,
+				EDC6018C2A8E34C00021FF3C /* MovieTab */,
+				EDC6018D2A8E34C70021FF3C /* TVTab */,
 				EDC378892A89281100F4EC12 /* Utils */,
 			);
 			path = Presentation;
@@ -265,6 +280,48 @@
 				ED96A81F2A8A395B00104D44 /* ImageFetchableProtocol.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		EDC6018C2A8E34C00021FF3C /* MovieTab */ = {
+			isa = PBXGroup;
+			children = (
+				EDC378822A88B35A00F4EC12 /* MovieListView */,
+				ED9936812A8957050019EF3F /* MovieDetailView */,
+			);
+			path = MovieTab;
+			sourceTree = "<group>";
+		};
+		EDC6018D2A8E34C70021FF3C /* TVTab */ = {
+			isa = PBXGroup;
+			children = (
+				EDC6018E2A8E34D90021FF3C /* TVListView */,
+			);
+			path = TVTab;
+			sourceTree = "<group>";
+		};
+		EDC6018E2A8E34D90021FF3C /* TVListView */ = {
+			isa = PBXGroup;
+			children = (
+				EDC601912A8E35010021FF3C /* VIewController */,
+				EDC601922A8E35090021FF3C /* View */,
+			);
+			path = TVListView;
+			sourceTree = "<group>";
+		};
+		EDC601912A8E35010021FF3C /* VIewController */ = {
+			isa = PBXGroup;
+			children = (
+				EDC6018F2A8E34E60021FF3C /* TVListViewController.swift */,
+			);
+			path = VIewController;
+			sourceTree = "<group>";
+		};
+		EDC601922A8E35090021FF3C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EDC601932A8E35120021FF3C /* TVListViewController.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,9 +389,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED99366B2A8940090019EF3F /* .gitignore in Resources */,
+				EDB0FA2F2A8E325200861AC1 /* MediaTabBarViewController.storyboard in Resources */,
 				EDC378882A8927BE00F4EC12 /* MovieListViewController.storyboard in Resources */,
 				EDC378782A889DDD00F4EC12 /* LaunchScreen.storyboard in Resources */,
 				ED9936872A89576A0019EF3F /* MovieDetailViewController.storyboard in Resources */,
+				EDC601942A8E35120021FF3C /* TVListViewController.storyboard in Resources */,
 				EDC378752A889DDD00F4EC12 /* Assets.xcassets in Resources */,
 				ED96A82B2A8A4DC500104D44 /* InfoTableViewCell.xib in Resources */,
 				ED064FC52A895AC600C79FBF /* DetailTableViewCell.xib in Resources */,
@@ -364,6 +423,7 @@
 				EDC3788D2A89285A00F4EC12 /* ReusableProtocol.swift in Sources */,
 				EDC3786C2A889DDC00F4EC12 /* AppDelegate.swift in Sources */,
 				ED9936682A893E420019EF3F /* MovieListResponseDTO.swift in Sources */,
+				EDC601902A8E34E60021FF3C /* TVListViewController.swift in Sources */,
 				ED99366E2A89404D0019EF3F /* APIKey.swift in Sources */,
 				EDDE759F2A8B0A1D00C3D536 /* Header.swift in Sources */,
 				ED96A81E2A8A35D400104D44 /* AlertableProtocol.swift in Sources */,
