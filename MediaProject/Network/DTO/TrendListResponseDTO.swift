@@ -1,26 +1,26 @@
 //
-//  MovieListResponseDTO.swift
+//  TrendListResponseDTO.swift
 //  MediaProject
 //
 //  Created by JongHoon on 2023/08/14.
 //
 
-struct MovieListResponseDTO: Codable {
+struct TrendListResponseDTO: Codable {
     let page: Int?
-    let movies: [MovieDTO]?
+    let videoDTOs: [VideoDTO]?
     let totalPages: Int?
     let totalResults: Int?
 
     enum CodingKeys: String, CodingKey {
         case page
-        case movies = "results"
+        case videoDTOs = "results"
         case totalPages = "total_pages"
         case totalResults = "total_results"
     }
 }
 
 // MARK: - Result
-struct MovieDTO: Codable {
+struct VideoDTO: Codable {
     let adult: Bool?
     let backdropPath: String?
     let id: Int?
@@ -54,8 +54,8 @@ struct MovieDTO: Codable {
         case voteCount = "vote_count"
     }
     
-    func toMovie() -> Movie {
-        return Movie(
+    func toVideo() -> Video {
+        return Video(
             adult: self.adult ?? false,
             backdropPath: self.backdropPath ?? "",
             id: self.id ?? 0,

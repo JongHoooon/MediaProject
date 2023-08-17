@@ -1,11 +1,11 @@
 //
-//  Movie.swift
+//  Video.swift
 //  MediaProject
 //
 //  Created by JongHoon on 2023/08/14.
 //
 
-struct Movie {
+struct Video {
     let adult: Bool
     let backdropPath: String
     let id: Int

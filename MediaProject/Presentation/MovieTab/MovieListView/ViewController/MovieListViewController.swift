@@ -15,7 +15,7 @@ final class MovieListViewController: UIViewController,
     
     // MARK: - Properties
     
-    private var movies: [Movie] = []
+    private var movies: [Video] = []
     
     // MARK: - UI
     
@@ -132,13 +132,14 @@ private extension MovieListViewController {
     
     func fetchMovieList() {
         MovieManager.shared.callRequest(
-            movieAPI: .fetchMovieList,
-            completionHandler: { [weak self] (result: Result<MovieListResponseDTO, AFError>) in
+            movieAPI: .fetchVideoList(type: .movie),
+            completionHandler: { [weak self] (result: Result<TrendListResponseDTO, AFError>) in
+                
                 switch result {
-                case let .success(movieListResponse):
-                    if let movieDTOs = movieListResponse.movies {
-                        let movies = movieDTOs.map { $0.toMovie() }
-                        self?.movies = movies
+                case let .success(videoListResponse):
+                    if let videoDTOs = videoListResponse.videoDTOs {
+                        let videos = videoDTOs.map { $0.toVideo() }
+                        self?.movies = videos
                         self?.movieListCollectionView.reloadData()
                     }
                 case let .failure(error):

@@ -13,14 +13,14 @@ enum Endpoint {
     }
     
     enum url {
-        case fetchMovies
+        case fetchVideos(type: VideoType)
         case fetchImage(url: String)
         case fetchCredits(id: Int)
         
         var string: String {
             switch self {
-            case .fetchMovies:
-                return baseURL+"/trending/movie/week"
+            case let .fetchVideos(type):
+                return baseURL+"/trending/\(type)/week"
             case let .fetchImage(url):
                 return "https://image.tmdb.org/t/p/w500/"+url
             case let .fetchCredits(id):

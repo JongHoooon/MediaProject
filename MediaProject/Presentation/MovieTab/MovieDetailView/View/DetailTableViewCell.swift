@@ -28,7 +28,7 @@ class DetailTableViewCell: UITableViewCell {
     }
     
     func configureCell(with row: Cast) {
-        let profileImageURL = MovieAPI.fetchImage(url: row.profilePath).url
+        let profileImageURL = VideoAPI.fetchImage(url: row.profilePath).url
         profileImageView.fetchImage(
             urlString: profileImageURL,
             placeholder: MPImage.PlaceholderImage.person,

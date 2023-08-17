@@ -132,8 +132,8 @@ private extension MovieDetailViewController {
 private extension MovieDetailViewController {
     
     func configureImageViews() {
-        let backdropURL = MovieAPI.fetchImage(url: backdropPath).url
-        let posterURL = MovieAPI.fetchImage(url: posterPath).url
+        let backdropURL = VideoAPI.fetchImage(url: backdropPath).url
+        let posterURL = VideoAPI.fetchImage(url: posterPath).url
         
         backdropImageView.fetchImage(
             urlString: backdropURL,

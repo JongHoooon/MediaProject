@@ -13,7 +13,7 @@ final class MovieManager: ManagerableProtocol {
     private init() {}
     
     func callRequest<T: Decodable>(
-        movieAPI: MovieAPI,
+        movieAPI: VideoAPI,
         completionHandler: @escaping (Result<T, AFError>) -> Void
     ) {
         movieAPI.request

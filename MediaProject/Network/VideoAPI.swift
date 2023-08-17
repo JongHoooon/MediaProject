@@ -1,5 +1,5 @@
 //
-//  MovieAPI.swift
+//  VideoAPI.swift
 //  MediaProject
 //
 //  Created by JongHoon on 2023/08/14.
@@ -8,22 +8,25 @@
 import Foundation
 import Alamofire
 
-enum MovieAPI: APIableProtocol {
-    case fetchMovieList
+enum VideoAPI: APIableProtocol {
+    case fetchVideoList(type: VideoType)
     case fetchImage(url: String)
     case fetchCredits(id: Int)
     
     var url: String {
         switch self {
-        case .fetchMovieList:           return Endpoint.url.fetchMovies.string
-        case let .fetchImage(url):      return Endpoint.url.fetchImage(url: url).string
-        case let .fetchCredits(id):     return Endpoint.url.fetchCredits(id: id).string
+        case let .fetchVideoList(type):
+            return Endpoint.url.fetchVideos(type: type).string
+        case let .fetchImage(url):
+            return Endpoint.url.fetchImage(url: url).string
+        case let .fetchCredits(id):
+            return Endpoint.url.fetchCredits(id: id).string
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .fetchMovieList:           return .get
+        case .fetchVideoList:           return .get
         case .fetchImage:               return .get
         case .fetchCredits:             return .get
         }
@@ -31,7 +34,7 @@ enum MovieAPI: APIableProtocol {
      
     var parameters: [String: Any]? {
         switch self {
-        case .fetchMovieList:           return nil
+        case .fetchVideoList:           return nil
         case .fetchImage:               return nil
         case .fetchCredits:             return nil
         }
@@ -40,7 +43,7 @@ enum MovieAPI: APIableProtocol {
     var headers: HTTPHeaders? {
         var headers: HTTPHeaders = [Header.accept.header]
         switch self {
-        case .fetchMovieList, .fetchCredits:
+        case .fetchVideoList, .fetchCredits:
             headers.add(Header.authorization.header)
             
             return headers

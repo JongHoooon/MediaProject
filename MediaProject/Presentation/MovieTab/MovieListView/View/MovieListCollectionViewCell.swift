@@ -70,8 +70,8 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
         backdropImageView.image = nil
     }
 
-    func configureCell(with item: Movie) {
-        let backdropURL = MovieAPI.fetchImage(url: item.backdropPath).url
+    func configureCell(with item: Video) {
+        let backdropURL = VideoAPI.fetchImage(url: item.backdropPath).url
         backdropImageView.fetchImage(
             urlString: backdropURL,
             placeholder: MPImage.PlaceholderImage.movie
