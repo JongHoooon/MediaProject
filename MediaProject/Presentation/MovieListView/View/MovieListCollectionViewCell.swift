@@ -90,26 +90,23 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
         titleLabel.text = item.title
         voteLabel.text = String(format: "%.1f", item.voteAverage)
         
-        MovieManager.shared
-            .callRequest(
-                movieAPI: .fetchCredits(id: item.id),
-                completionHandler: { [weak self] (result: Result<CreditResponseDTO, AFError>) in
-                    switch result {
-                    case let .success(creditResponse):
-                        if let castDTOs = creditResponse.cast {
-                            let casts = castDTOs.map { $0.toCast() }
-                            let castsText = casts.prefix(4)
-                                .map { $0.name }
-                                .joined(separator: ", ")
-
-                            self?.castsLabel.text = castsText
-                        }
-                        break
-                    case let .failure(error):
-                        print(error.errorDescription ?? "알 수 없는 오류입니다.")
-                        break
+        MovieManager.shared.callRequest(
+            movieAPI: .fetchCredits(id: item.id),
+            completionHandler: { [weak self] (result: Result<CreditResponseDTO, AFError>) in
+                switch result {
+                case let .success(creditResponse):
+                    if let castDTOs = creditResponse.cast {
+                        let casts = castDTOs.map { $0.toCast() }
+                        let castsText = casts.prefix(4)
+                            .map { $0.name }
+                            .joined(separator: ", ")
+                        
+                        self?.castsLabel.text = castsText
                     }
+                case let .failure(error):
+                    print(error.errorDescription ?? "알 수 없는 오류입니다.")
                 }
-            )
+            }
+        )
     }
 }
