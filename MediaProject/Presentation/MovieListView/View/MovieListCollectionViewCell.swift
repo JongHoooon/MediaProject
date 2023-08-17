@@ -65,6 +65,8 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
+        super.prepareForReuse()
+        
         backdropImageView.image = nil
     }
 
