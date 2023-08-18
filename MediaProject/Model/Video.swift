@@ -18,4 +18,22 @@ struct Video {
     let popularity: Double
     let releaseDate: String
     let voteAverage: Double
+    
+    var releaseDateText: String? {
+        guard !releaseDate.isEmpty else { return nil }
+        
+        let releaseDateSplits = releaseDate.split(separator: "-")
+        let year = releaseDateSplits[0]
+        let month = releaseDateSplits[1]
+        let day = releaseDateSplits[2]
+        return [
+            month,
+            day,
+            year
+        ].map { String($0 ?? "") }
+            .joined(separator: "/")
+    }
+    var voteAverageText: String? {
+        return String(format: "%.1f", voteAverage)
+    }
 }
