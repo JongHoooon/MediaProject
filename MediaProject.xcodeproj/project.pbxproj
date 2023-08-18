@@ -42,8 +42,8 @@
 		EDC601902A8E34E60021FF3C /* TVListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC6018F2A8E34E60021FF3C /* TVListViewController.swift */; };
 		EDC601942A8E35120021FF3C /* TVListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC601932A8E35120021FF3C /* TVListViewController.storyboard */; };
 		EDC601962A8E3E420021FF3C /* VideoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC601952A8E3E420021FF3C /* VideoType.swift */; };
-		EDC601A72A8EFF5F0021FF3C /* TVDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC601A62A8EFF5F0021FF3C /* TVDetailViewController.swift */; };
-		EDC601A92A8EFF750021FF3C /* TVDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC601A82A8EFF750021FF3C /* TVDetailViewController.storyboard */; };
+		EDC601A72A8EFF5F0021FF3C /* TVRelatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC601A62A8EFF5F0021FF3C /* TVRelatedViewController.swift */; };
+		EDC601A92A8EFF750021FF3C /* TVRelatedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC601A82A8EFF750021FF3C /* TVRelatedViewController.storyboard */; };
 		EDDE759D2A8B09A100C3D536 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE759C2A8B09A100C3D536 /* Endpoint.swift */; };
 		EDDE759F2A8B0A1D00C3D536 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE759E2A8B0A1D00C3D536 /* Header.swift */; };
 		EDECE7092A8F329800E2877E /* TVSeriesDetailDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDECE7082A8F329800E2877E /* TVSeriesDetailDTO.swift */; };
@@ -89,8 +89,8 @@
 		EDC6018F2A8E34E60021FF3C /* TVListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVListViewController.swift; sourceTree = "<group>"; };
 		EDC601932A8E35120021FF3C /* TVListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TVListViewController.storyboard; sourceTree = "<group>"; };
 		EDC601952A8E3E420021FF3C /* VideoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoType.swift; sourceTree = "<group>"; };
-		EDC601A62A8EFF5F0021FF3C /* TVDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVDetailViewController.swift; sourceTree = "<group>"; };
-		EDC601A82A8EFF750021FF3C /* TVDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TVDetailViewController.storyboard; sourceTree = "<group>"; };
+		EDC601A62A8EFF5F0021FF3C /* TVRelatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVRelatedViewController.swift; sourceTree = "<group>"; };
+		EDC601A82A8EFF750021FF3C /* TVRelatedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TVRelatedViewController.storyboard; sourceTree = "<group>"; };
 		EDDE759C2A8B09A100C3D536 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		EDDE759E2A8B0A1D00C3D536 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		EDECE7082A8F329800E2877E /* TVSeriesDetailDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSeriesDetailDTO.swift; sourceTree = "<group>"; };
@@ -356,7 +356,7 @@
 		EDC601A42A8EFF410021FF3C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				EDC601A62A8EFF5F0021FF3C /* TVDetailViewController.swift */,
+				EDC601A62A8EFF5F0021FF3C /* TVRelatedViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -364,7 +364,7 @@
 		EDC601A52A8EFF470021FF3C /* VIew */ = {
 			isa = PBXGroup;
 			children = (
-				EDC601A82A8EFF750021FF3C /* TVDetailViewController.storyboard */,
+				EDC601A82A8EFF750021FF3C /* TVRelatedViewController.storyboard */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -445,7 +445,7 @@
 				EDB0FA2F2A8E325200861AC1 /* MediaTabBarViewController.storyboard in Resources */,
 				EDC378882A8927BE00F4EC12 /* MovieListViewController.storyboard in Resources */,
 				EDC378782A889DDD00F4EC12 /* LaunchScreen.storyboard in Resources */,
-				EDC601A92A8EFF750021FF3C /* TVDetailViewController.storyboard in Resources */,
+				EDC601A92A8EFF750021FF3C /* TVRelatedViewController.storyboard in Resources */,
 				ED9936872A89576A0019EF3F /* MovieDetailViewController.storyboard in Resources */,
 				EDC601942A8E35120021FF3C /* TVListViewController.storyboard in Resources */,
 				EDC378752A889DDD00F4EC12 /* Assets.xcassets in Resources */,
@@ -469,7 +469,7 @@
 				ED96A81C2A8A31C600104D44 /* Video.swift in Sources */,
 				EDC601962A8E3E420021FF3C /* VideoType.swift in Sources */,
 				ED9936652A89345B0019EF3F /* PaddingLabel.swift in Sources */,
-				EDC601A72A8EFF5F0021FF3C /* TVDetailViewController.swift in Sources */,
+				EDC601A72A8EFF5F0021FF3C /* TVRelatedViewController.swift in Sources */,
 				EDC378902A892A4F00F4EC12 /* MovieListCollectionViewCell.swift in Sources */,
 				ED064FC42A895AC600C79FBF /* DetailTableViewCell.swift in Sources */,
 				EDC378862A88B38200F4EC12 /* MovieListViewController.swift in Sources */,

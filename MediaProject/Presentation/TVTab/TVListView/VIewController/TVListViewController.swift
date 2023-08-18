@@ -66,7 +66,7 @@ extension TVListViewController: UICollectionViewDelegate {
     ) {
         let item = tvSeriesList[indexPath.row]
         
-        let vc = TVDetailViewController.instantiateViewController()
+        let vc = TVRelatedViewController.instantiateViewController()
         vc.id = item.id
         
         navigationController?.pushViewController(vc, animated: true)

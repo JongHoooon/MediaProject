@@ -1,5 +1,5 @@
 //
-//  TVDetailViewController.swift
+//  TVRelatedViewController.swift
 //  MediaProject
 //
 //  Created by JongHoon on 2023/08/18.
@@ -9,9 +9,9 @@ import UIKit
 
 import Alamofire
 
-final class TVDetailViewController: UIViewController,
-                                    StoryboardInstantiableProtocol,
-                                    AlertableProtocol {
+final class TVRelatedViewController: UIViewController,
+                                     StoryboardInstantiableProtocol,
+                                     AlertableProtocol {
     
     var id: Int!
     
@@ -23,21 +23,9 @@ final class TVDetailViewController: UIViewController,
 
 // MARK: - Private Method
 
-private extension TVDetailViewController {
+private extension TVRelatedViewController {
     
     func fetchTVDetail(id: Int) {
-        
-//        MovieManager.shared.callRequest(
-//            movieAPI: .fetchTVDetails(id: id),
-//            completionHandler: { [weak self] (result: Result<TVSeriesDetailDTO, AFError>) in
-//                switch result {
-//                case let .success(value):
-//                    break
-//                case let .failure(error):
-//
-//                    break
-//                }
-//            })
         Task {
             
             do {
@@ -53,5 +41,3 @@ private extension TVDetailViewController {
         }
     }
 }
-
-
