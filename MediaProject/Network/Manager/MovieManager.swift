@@ -11,22 +11,22 @@ final class MovieManager: ManagerableProtocol {
     
     static var shared = MovieManager()
     private init() {}
-    
+
     func callRequest<T: Decodable>(
-        movieAPI: VideoAPI,
-        completionHandler: @escaping (Result<T, AFError>) -> Void
-    ) {
-        movieAPI.request
-            .responseDecodable(
-                of: T.self,
-                completionHandler: { response in
-                    switch response.result {
-                    case let .success(value):
-                        completionHandler(.success(value))
-                    case let .failure(error):
-                        completionHandler(.failure(error))
-                    }
-                }
-            )
+        of: T.Type,
+        movieAPI: VideoAPI
+    ) async throws -> T {
+        
+        let result = await movieAPI
+            .request
+            .serializingDecodable(T.self)
+            .result
+        
+        switch result {
+        case let .success(value):
+            return value
+        case let .failure(error):
+            throw(error)
+        }
     }
 }

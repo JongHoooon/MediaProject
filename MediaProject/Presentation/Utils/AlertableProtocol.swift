@@ -29,12 +29,16 @@ extension AlertableProtocol where Self: UIViewController {
         present(alertController, animated: true)
     }
     
-    func presentAFError(error: AFError) {
-        if let description = error.errorDescription {
-            presentSimpleAlert(message: description)
-        } else {
-            presentSimpleAlert(message: String(describing: error))
+    func presentAFError(error: Error) {
+        guard let afError = error as? AFError else {
+            presentSimpleAlert(message: error.localizedDescription)
+            return
         }
         
+        if let description = afError.errorDescription {
+            presentSimpleAlert(message: description)
+        } else {
+            presentSimpleAlert(message: String(describing: afError))
+        }
     }
 }

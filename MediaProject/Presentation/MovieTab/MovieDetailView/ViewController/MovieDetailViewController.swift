@@ -146,19 +146,17 @@ private extension MovieDetailViewController {
     }
         
     func fetchCredits(id: Int) {
-        MovieManager.shared.callRequest(
-            movieAPI: .fetchCredits(id: id),
-            completionHandler: { [weak self] (result: Result<CreditResponseDTO, AFError>) in
-                switch result {
-                case let .success(creditResponseDTO):
-                    if let castDTOs = creditResponseDTO.cast {
-                        self?.casts = castDTOs.map { $0.toCast() }
-                        self?.detailTableView.reloadData()
-                    }
-                case let .failure(error):
-                    self?.presentAFError(error: error)
-                }
+        Task {
+            do {
+                let creditResponseDTO = try await MovieManager.shared.callRequest(
+                    of: CreditResponseDTO.self,
+                    movieAPI: .fetchCredits(id: id)
+                )
+                casts = creditResponseDTO.toCasts()
+                detailTableView.reloadData()
+            } catch {
+                presentAFError(error: error)
             }
-        )
+        }
     }
 }

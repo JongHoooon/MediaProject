@@ -131,21 +131,18 @@ private extension MovieListViewController {
     }
     
     func fetchMovieList() {
-        MovieManager.shared.callRequest(
-            movieAPI: .fetchTrendingVideo(type: .movie),
-            completionHandler: { [weak self] (result: Result<TrendListResponseDTO, AFError>) in
-                
-                switch result {
-                case let .success(videoListResponse):
-                    if let videoDTOs = videoListResponse.videoDTOs {
-                        let videos = videoDTOs.map { $0.toVideo() }
-                        self?.movies = videos
-                        self?.movieListCollectionView.reloadData()
-                    }
-                case let .failure(error):
-                    self?.presentAFError(error: error)
-                }
+        Task {
+            do {
+                let trendListResponseDTO = try await MovieManager.shared.callRequest(
+                    of: TrendListResponseDTO.self,
+                    movieAPI: .fetchTrendingVideo(type: .movie)
+                )
+                let videos = trendListResponseDTO.toVideos()
+                movies = videos
+                movieListCollectionView.reloadData()
+            } catch {
+                presentAFError(error: error)
             }
-        )
+        }
     }
 }

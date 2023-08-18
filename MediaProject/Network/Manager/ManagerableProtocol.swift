@@ -12,8 +12,9 @@ protocol ManagerableProtocol {
     associatedtype APIable: APIableProtocol
     
     static var shared: Self { get }
+
     func callRequest<T: Decodable>(
-        movieAPI: APIable,
-        completionHandler: @escaping (Result<T, AFError>) -> Void
-    )
+        of: T.Type,
+        movieAPI: APIable
+    ) async throws -> T
 }
