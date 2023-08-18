@@ -49,6 +49,7 @@
 		EDECE7092A8F329800E2877E /* TVSeriesDetailDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDECE7082A8F329800E2877E /* TVSeriesDetailDTO.swift */; };
 		EDECE70B2A8F36B400E2877E /* TVDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDECE70A2A8F36B400E2877E /* TVDetail.swift */; };
 		EDECE70D2A8F54DC00E2877E /* genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDECE70C2A8F54DC00E2877E /* genre.swift */; };
+		EDECE7102A8F567D00E2877E /* VideoListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDECE70F2A8F567D00E2877E /* VideoListCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,7 @@
 		EDECE7082A8F329800E2877E /* TVSeriesDetailDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSeriesDetailDTO.swift; sourceTree = "<group>"; };
 		EDECE70A2A8F36B400E2877E /* TVDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVDetail.swift; sourceTree = "<group>"; };
 		EDECE70C2A8F54DC00E2877E /* genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = genre.swift; sourceTree = "<group>"; };
+		EDECE70F2A8F567D00E2877E /* VideoListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +291,7 @@
 		EDC378892A89281100F4EC12 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EDECE70E2A8F565D00E2877E /* UI */,
 				ED9936642A89345B0019EF3F /* PaddingLabel.swift */,
 				EDC3788A2A89283900F4EC12 /* StoryboardInstantiableProtocol.swift */,
 				EDC3788C2A89285A00F4EC12 /* ReusableProtocol.swift */,
@@ -364,6 +367,14 @@
 				EDC601A82A8EFF750021FF3C /* TVDetailViewController.storyboard */,
 			);
 			path = VIew;
+			sourceTree = "<group>";
+		};
+		EDECE70E2A8F565D00E2877E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				EDECE70F2A8F567D00E2877E /* VideoListCollectionView.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -464,6 +475,7 @@
 				EDC378862A88B38200F4EC12 /* MovieListViewController.swift in Sources */,
 				ED9936852A8957420019EF3F /* MovieDetailViewController.swift in Sources */,
 				ED064FC72A895F0900C79FBF /* CreditResponseDTO.swift in Sources */,
+				EDECE7102A8F567D00E2877E /* VideoListCollectionView.swift in Sources */,
 				ED96A8262A8A452A00104D44 /* MPImage.swift in Sources */,
 				EDC3788D2A89285A00F4EC12 /* ReusableProtocol.swift in Sources */,
 				EDC3786C2A889DDC00F4EC12 /* AppDelegate.swift in Sources */,
