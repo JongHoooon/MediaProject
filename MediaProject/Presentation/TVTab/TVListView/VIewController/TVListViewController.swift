@@ -68,12 +68,8 @@ extension TVListViewController: UICollectionViewDelegate {
     ) {
         let item = tvSeriesList[indexPath.row]
         
-        let vc = MovieDetailViewController.instantiateViewController()
-        vc.movieID = item.id
-        vc.backdropPath = item.backdropPath
-        vc.posterPath = item.posterPath
-        vc.movieTitle = item.title
-        vc.overview = item.overview
+        let vc = TVDetailViewController.instantiateViewController()
+        vc.id = item.id
         
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -132,7 +128,7 @@ private extension TVListViewController {
     
     func fetchMovieList() {
         MovieManager.shared.callRequest(
-            movieAPI: .fetchVideoList(type: .tv),
+            movieAPI: .fetchTrendingVideo(type: .tv),
             completionHandler: { [weak self] (result: Result<TrendListResponseDTO, AFError>) in
                 
                 switch result {

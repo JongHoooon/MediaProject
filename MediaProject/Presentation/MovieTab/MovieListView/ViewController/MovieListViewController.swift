@@ -132,7 +132,7 @@ private extension MovieListViewController {
     
     func fetchMovieList() {
         MovieManager.shared.callRequest(
-            movieAPI: .fetchVideoList(type: .movie),
+            movieAPI: .fetchTrendingVideo(type: .movie),
             completionHandler: { [weak self] (result: Result<TrendListResponseDTO, AFError>) in
                 
                 switch result {

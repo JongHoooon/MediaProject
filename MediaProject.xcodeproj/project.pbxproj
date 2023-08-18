@@ -42,8 +42,12 @@
 		EDC601902A8E34E60021FF3C /* TVListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC6018F2A8E34E60021FF3C /* TVListViewController.swift */; };
 		EDC601942A8E35120021FF3C /* TVListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC601932A8E35120021FF3C /* TVListViewController.storyboard */; };
 		EDC601962A8E3E420021FF3C /* VideoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC601952A8E3E420021FF3C /* VideoType.swift */; };
+		EDC601A72A8EFF5F0021FF3C /* TVDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC601A62A8EFF5F0021FF3C /* TVDetailViewController.swift */; };
+		EDC601A92A8EFF750021FF3C /* TVDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC601A82A8EFF750021FF3C /* TVDetailViewController.storyboard */; };
 		EDDE759D2A8B09A100C3D536 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE759C2A8B09A100C3D536 /* Endpoint.swift */; };
 		EDDE759F2A8B0A1D00C3D536 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE759E2A8B0A1D00C3D536 /* Header.swift */; };
+		EDECE7092A8F329800E2877E /* TVSeriesDetailDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDECE7082A8F329800E2877E /* TVSeriesDetailDTO.swift */; };
+		EDECE70B2A8F36B400E2877E /* TVDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDECE70A2A8F36B400E2877E /* TVDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,8 +87,12 @@
 		EDC6018F2A8E34E60021FF3C /* TVListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVListViewController.swift; sourceTree = "<group>"; };
 		EDC601932A8E35120021FF3C /* TVListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TVListViewController.storyboard; sourceTree = "<group>"; };
 		EDC601952A8E3E420021FF3C /* VideoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoType.swift; sourceTree = "<group>"; };
+		EDC601A62A8EFF5F0021FF3C /* TVDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVDetailViewController.swift; sourceTree = "<group>"; };
+		EDC601A82A8EFF750021FF3C /* TVDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TVDetailViewController.storyboard; sourceTree = "<group>"; };
 		EDDE759C2A8B09A100C3D536 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		EDDE759E2A8B0A1D00C3D536 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		EDECE7082A8F329800E2877E /* TVSeriesDetailDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSeriesDetailDTO.swift; sourceTree = "<group>"; };
+		EDECE70A2A8F36B400E2877E /* TVDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +121,7 @@
 			children = (
 				ED9936672A893E420019EF3F /* TrendListResponseDTO.swift */,
 				ED064FC62A895F0900C79FBF /* CreditResponseDTO.swift */,
+				EDECE7082A8F329800E2877E /* TVSeriesDetailDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -129,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				ED96A81B2A8A31C600104D44 /* Video.swift */,
+				EDECE70A2A8F36B400E2877E /* TVDetail.swift */,
 				ED96A8212A8A3B0B00104D44 /* Cast.swift */,
 				EDC601952A8E3E420021FF3C /* VideoType.swift */,
 			);
@@ -298,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				EDC6018E2A8E34D90021FF3C /* TVListView */,
+				EDC601A32A8EFEEC0021FF3C /* TVDetailView */,
 			);
 			path = TVTab;
 			sourceTree = "<group>";
@@ -325,6 +336,31 @@
 				EDC601932A8E35120021FF3C /* TVListViewController.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		EDC601A32A8EFEEC0021FF3C /* TVDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				EDC601A42A8EFF410021FF3C /* ViewController */,
+				EDC601A52A8EFF470021FF3C /* VIew */,
+			);
+			path = TVDetailView;
+			sourceTree = "<group>";
+		};
+		EDC601A42A8EFF410021FF3C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EDC601A62A8EFF5F0021FF3C /* TVDetailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		EDC601A52A8EFF470021FF3C /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				EDC601A82A8EFF750021FF3C /* TVDetailViewController.storyboard */,
+			);
+			path = VIew;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,6 +431,7 @@
 				EDB0FA2F2A8E325200861AC1 /* MediaTabBarViewController.storyboard in Resources */,
 				EDC378882A8927BE00F4EC12 /* MovieListViewController.storyboard in Resources */,
 				EDC378782A889DDD00F4EC12 /* LaunchScreen.storyboard in Resources */,
+				EDC601A92A8EFF750021FF3C /* TVDetailViewController.storyboard in Resources */,
 				ED9936872A89576A0019EF3F /* MovieDetailViewController.storyboard in Resources */,
 				EDC601942A8E35120021FF3C /* TVListViewController.storyboard in Resources */,
 				EDC378752A889DDD00F4EC12 /* Assets.xcassets in Resources */,
@@ -418,6 +455,7 @@
 				ED96A81C2A8A31C600104D44 /* Video.swift in Sources */,
 				EDC601962A8E3E420021FF3C /* VideoType.swift in Sources */,
 				ED9936652A89345B0019EF3F /* PaddingLabel.swift in Sources */,
+				EDC601A72A8EFF5F0021FF3C /* TVDetailViewController.swift in Sources */,
 				EDC378902A892A4F00F4EC12 /* MovieListCollectionViewCell.swift in Sources */,
 				ED064FC42A895AC600C79FBF /* DetailTableViewCell.swift in Sources */,
 				EDC378862A88B38200F4EC12 /* MovieListViewController.swift in Sources */,
@@ -426,6 +464,7 @@
 				ED96A8262A8A452A00104D44 /* MPImage.swift in Sources */,
 				EDC3788D2A89285A00F4EC12 /* ReusableProtocol.swift in Sources */,
 				EDC3786C2A889DDC00F4EC12 /* AppDelegate.swift in Sources */,
+				EDECE70B2A8F36B400E2877E /* TVDetail.swift in Sources */,
 				ED9936682A893E420019EF3F /* TrendListResponseDTO.swift in Sources */,
 				EDC601902A8E34E60021FF3C /* TVListViewController.swift in Sources */,
 				ED99366E2A89404D0019EF3F /* APIKey.swift in Sources */,
@@ -435,6 +474,7 @@
 				ED96A8222A8A3B0B00104D44 /* Cast.swift in Sources */,
 				ED96A8202A8A395B00104D44 /* ImageFetchableProtocol.swift in Sources */,
 				ED064FCA2A89EC2700C79FBF /* ManagerableProtocol.swift in Sources */,
+				EDECE7092A8F329800E2877E /* TVSeriesDetailDTO.swift in Sources */,
 				ED99367E2A89462E0019EF3F /* VideoAPI.swift in Sources */,
 				EDC3786E2A889DDC00F4EC12 /* SceneDelegate.swift in Sources */,
 			);

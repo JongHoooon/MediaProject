@@ -9,44 +9,53 @@ import Foundation
 import Alamofire
 
 enum VideoAPI: APIableProtocol {
-    case fetchVideoList(type: VideoType)
+    case fetchTrendingVideo(type: VideoType)
     case fetchImage(url: String)
     case fetchCredits(id: Int)
+    case fetchTVDetails(id: Int)
+    case fetchTVSeason(id: Int, seasonNumber: Int)
+    case fetchTVEpisode(id: Int, seasonNumber: Int, episodeNumber: Int)
     
     var url: String {
+        let baseURL = Endpoint.baseURL
+        
         switch self {
-        case let .fetchVideoList(type):
-            return Endpoint.url.fetchVideos(type: type).string
+        case let .fetchTrendingVideo(type):
+            return baseURL+"/trending/\(type)/week"
         case let .fetchImage(url):
-            return Endpoint.url.fetchImage(url: url).string
+            return "https://image.tmdb.org/t/p/w500/"+url
         case let .fetchCredits(id):
-            return Endpoint.url.fetchCredits(id: id).string
+            return baseURL+"/movie/\(id)/credits"
+        case let .fetchTVDetails(id):
+            return baseURL+"/tv/\(id)"
+        case let .fetchTVSeason(id, seasonNumber):
+            return baseURL+"/tv/\(id)/season/\(seasonNumber)"
+        case let .fetchTVEpisode(id, seasonNumber, episodeNumber):
+            return baseURL+"/tv/\(id)/season/\(seasonNumber)/episode/\(episodeNumber)"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .fetchVideoList:           return .get
-        case .fetchImage:               return .get
-        case .fetchCredits:             return .get
+        default:                        return .get
         }
     }
      
     var parameters: [String: Any]? {
         switch self {
-        case .fetchVideoList:           return nil
-        case .fetchImage:               return nil
-        case .fetchCredits:             return nil
+        default:                        return nil
         }
     }
     
     var headers: HTTPHeaders? {
-        var headers: HTTPHeaders = [Header.accept.header]
         switch self {
-        case .fetchVideoList, .fetchCredits:
-            headers.add(Header.authorization.header)
+        case .fetchTrendingVideo,
+             .fetchCredits,
+             .fetchTVDetails,
+             .fetchTVSeason,
+             .fetchTVEpisode:
             
-            return headers
+            return [Header.accept.header, Header.authorization.header]
         case .fetchImage:
             
             return nil
