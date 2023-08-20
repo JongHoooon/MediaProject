@@ -12,6 +12,9 @@
 		ED064FC72A895F0900C79FBF /* CreditResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED064FC62A895F0900C79FBF /* CreditResponseDTO.swift */; };
 		ED064FCA2A89EC2700C79FBF /* ManagerableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED064FC82A89EC2700C79FBF /* ManagerableProtocol.swift */; };
 		ED064FCD2A89EC5000C79FBF /* MovieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED064FCC2A89EC5000C79FBF /* MovieManager.swift */; };
+		ED9209532A8F682900EF32F4 /* TVSimilarResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9209522A8F682900EF32F4 /* TVSimilarResponseDTO.swift */; };
+		ED9209552A8F69A400EF32F4 /* RelatedVideoResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9209542A8F69A400EF32F4 /* RelatedVideoResponseDTO.swift */; };
+		ED9209582A8F6A3400EF32F4 /* RelatedVideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9209572A8F6A3400EF32F4 /* RelatedVideoInfo.swift */; };
 		ED96A81C2A8A31C600104D44 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED96A81B2A8A31C600104D44 /* Video.swift */; };
 		ED96A81E2A8A35D400104D44 /* AlertableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED96A81D2A8A35D400104D44 /* AlertableProtocol.swift */; };
 		ED96A8202A8A395B00104D44 /* ImageFetchableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED96A81F2A8A395B00104D44 /* ImageFetchableProtocol.swift */; };
@@ -58,6 +61,9 @@
 		ED064FC62A895F0900C79FBF /* CreditResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditResponseDTO.swift; sourceTree = "<group>"; };
 		ED064FC82A89EC2700C79FBF /* ManagerableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerableProtocol.swift; sourceTree = "<group>"; };
 		ED064FCC2A89EC5000C79FBF /* MovieManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieManager.swift; sourceTree = "<group>"; };
+		ED9209522A8F682900EF32F4 /* TVSimilarResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSimilarResponseDTO.swift; sourceTree = "<group>"; };
+		ED9209542A8F69A400EF32F4 /* RelatedVideoResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedVideoResponseDTO.swift; sourceTree = "<group>"; };
+		ED9209572A8F6A3400EF32F4 /* RelatedVideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedVideoInfo.swift; sourceTree = "<group>"; };
 		ED96A81B2A8A31C600104D44 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		ED96A81D2A8A35D400104D44 /* AlertableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertableProtocol.swift; sourceTree = "<group>"; };
 		ED96A81F2A8A395B00104D44 /* ImageFetchableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetchableProtocol.swift; sourceTree = "<group>"; };
@@ -126,6 +132,8 @@
 				ED9936672A893E420019EF3F /* TrendListResponseDTO.swift */,
 				ED064FC62A895F0900C79FBF /* CreditResponseDTO.swift */,
 				EDECE7082A8F329800E2877E /* TVSeriesDetailDTO.swift */,
+				ED9209522A8F682900EF32F4 /* TVSimilarResponseDTO.swift */,
+				ED9209542A8F69A400EF32F4 /* RelatedVideoResponseDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -146,6 +154,7 @@
 				ED96A8212A8A3B0B00104D44 /* Cast.swift */,
 				EDC601952A8E3E420021FF3C /* VideoType.swift */,
 				EDECE70C2A8F54DC00E2877E /* genre.swift */,
+				ED9209572A8F6A3400EF32F4 /* RelatedVideoInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -472,11 +481,14 @@
 				EDC601A72A8EFF5F0021FF3C /* TVRelatedViewController.swift in Sources */,
 				EDC378902A892A4F00F4EC12 /* MovieListCollectionViewCell.swift in Sources */,
 				ED064FC42A895AC600C79FBF /* DetailTableViewCell.swift in Sources */,
+				ED9209552A8F69A400EF32F4 /* RelatedVideoResponseDTO.swift in Sources */,
+				ED9209582A8F6A3400EF32F4 /* RelatedVideoInfo.swift in Sources */,
 				EDC378862A88B38200F4EC12 /* MovieListViewController.swift in Sources */,
 				ED9936852A8957420019EF3F /* MovieDetailViewController.swift in Sources */,
 				ED064FC72A895F0900C79FBF /* CreditResponseDTO.swift in Sources */,
 				EDECE7102A8F567D00E2877E /* VideoListCollectionView.swift in Sources */,
 				ED96A8262A8A452A00104D44 /* MPImage.swift in Sources */,
+				ED9209532A8F682900EF32F4 /* TVSimilarResponseDTO.swift in Sources */,
 				EDC3788D2A89285A00F4EC12 /* ReusableProtocol.swift in Sources */,
 				EDC3786C2A889DDC00F4EC12 /* AppDelegate.swift in Sources */,
 				EDECE70B2A8F36B400E2877E /* TVDetail.swift in Sources */,

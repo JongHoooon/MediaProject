@@ -27,7 +27,6 @@ private extension TVRelatedViewController {
     
     func fetchTVDetail(id: Int) {
         Task {
-            
             do {
                 let tvSeriesDetailDTO = try await MovieManager.shared.callRequest(
                     of: TVSeriesDetailDTO.self,
