@@ -13,6 +13,11 @@ class SimilarTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var voteLabel: UILabel!
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        posterImageView.image = nil
+    }
     
     func configureCell(row video: Video) {
         let posterURL = VideoAPI.fetchImage(url: video.posterPath).url

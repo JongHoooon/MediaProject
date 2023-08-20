@@ -16,7 +16,7 @@ enum VideoAPI: APIableProtocol {
     case fetchTVSeason(id: Int, seasonNumber: Int)
     case fetchTVEpisode(id: Int, seasonNumber: Int, episodeNumber: Int)
     case fetchTVSimilar(id: Int)
-    case fetchTVVideo(id: Int)
+    case fetchTVRelated(id: Int)
     
     var url: String {
         let baseURL = Endpoint.baseURL
@@ -36,8 +36,8 @@ enum VideoAPI: APIableProtocol {
             return baseURL+"/tv/\(id)/season/\(seasonNumber)/episode/\(episodeNumber)"
         case let .fetchTVSimilar(id):
             return baseURL+"/tv/\(id)/similar"
-        case .fetchTVVideo(id: let id):
-            return baseURL+"/tv/\(id)/Videos"
+        case .fetchTVRelated(id: let id):
+            return baseURL+"/tv/\(id)/videos"
         }
     }
     
@@ -61,7 +61,7 @@ enum VideoAPI: APIableProtocol {
              .fetchTVSeason,
              .fetchTVEpisode,
              .fetchTVSimilar,
-             .fetchTVVideo:
+             .fetchTVRelated:
             
             return [Header.accept.header, Header.authorization.header]
         case .fetchImage:

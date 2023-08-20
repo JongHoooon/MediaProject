@@ -19,6 +19,7 @@ final class MovieManager: ManagerableProtocol {
         
         let result = await movieAPI
             .request
+            .validate()
             .serializingDecodable(T.self)
             .result
         
