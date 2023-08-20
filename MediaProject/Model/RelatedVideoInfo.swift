@@ -9,4 +9,8 @@ struct RelatedVideoInfo {
     let name: String
     let site: String
     let type: String
+    
+    var subInfoText: String {
+        return "\(site) \(type)"
+    }
 }
