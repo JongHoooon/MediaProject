@@ -21,6 +21,7 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var backdropImageView: UIImageView!
     @IBOutlet private var voteLabel: PaddingLabel!
     @IBOutlet private var titleLabel: UILabel!
+    @IBOutlet var originalTitleLabel: UILabel!
     @IBOutlet private var castsLabel: UILabel!
     @IBOutlet private var separatorView: UIView!
     @IBOutlet private var shadowView: UIView!
@@ -57,6 +58,7 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
         dateLabel.text = item.releaseDateText
         genreLabel.text = genre.movieGenre[item.genreIDS[0], default: "Movie"]
         titleLabel.text = item.title
+        originalTitleLabel.text = item.originalTitle
         voteLabel.text = item.voteAverageText
         configureCastsLabel(id: item.id)
     }
