@@ -30,6 +30,14 @@ final class MovieListViewController: UIViewController,
         navigationItem.backButtonTitle = ""
         
         fetchMovieList()
+        
+        if !UserDefaults.standard.bool(forKey: "isFirst") {
+            UserDefaults.standard.set(true, forKey: "isFirst")
+            let vc = IntroPageViewController()
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            present(nav, animated: false)
+        }
     }
 }
 

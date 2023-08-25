@@ -53,6 +53,9 @@
 		EDD2FAA42A91EC6A0028CF9B /* RelatedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD2FAA22A91EC6A0028CF9B /* RelatedTableViewCell.xib */; };
 		EDDE759D2A8B09A100C3D536 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE759C2A8B09A100C3D536 /* Endpoint.swift */; };
 		EDDE759F2A8B0A1D00C3D536 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE759E2A8B0A1D00C3D536 /* Header.swift */; };
+		EDE5188B2A9898A600C16C9E /* IntroPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE5188A2A9898A600C16C9E /* IntroPageViewController.swift */; };
+		EDE5188D2A98996C00C16C9E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE5188C2A98996C00C16C9E /* PageViewController.swift */; };
+		EDE518902A989D0600C16C9E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EDE5188F2A989D0600C16C9E /* SnapKit */; };
 		EDECE7092A8F329800E2877E /* TVSeriesDetailDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDECE7082A8F329800E2877E /* TVSeriesDetailDTO.swift */; };
 		EDECE70B2A8F36B400E2877E /* TVDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDECE70A2A8F36B400E2877E /* TVDetail.swift */; };
 		EDECE70D2A8F54DC00E2877E /* genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDECE70C2A8F54DC00E2877E /* genre.swift */; };
@@ -107,6 +110,8 @@
 		EDD2FAA22A91EC6A0028CF9B /* RelatedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RelatedTableViewCell.xib; sourceTree = "<group>"; };
 		EDDE759C2A8B09A100C3D536 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		EDDE759E2A8B0A1D00C3D536 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		EDE5188A2A9898A600C16C9E /* IntroPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageViewController.swift; sourceTree = "<group>"; };
+		EDE5188C2A98996C00C16C9E /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		EDECE7082A8F329800E2877E /* TVSeriesDetailDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSeriesDetailDTO.swift; sourceTree = "<group>"; };
 		EDECE70A2A8F36B400E2877E /* TVDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVDetail.swift; sourceTree = "<group>"; };
 		EDECE70C2A8F54DC00E2877E /* genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = genre.swift; sourceTree = "<group>"; };
@@ -119,6 +124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED99367A2A89444A0019EF3F /* Alamofire in Frameworks */,
+				EDE518902A989D0600C16C9E /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +276,7 @@
 		EDC378812A88B34900F4EC12 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				EDE518892A98988900C16C9E /* IntroView */,
 				EDB0FA2D2A8E322E00861AC1 /* TabBarView */,
 				EDC6018C2A8E34C00021FF3C /* MovieTab */,
 				EDC6018D2A8E34C70021FF3C /* TVTab */,
@@ -390,6 +397,15 @@
 			path = VIew;
 			sourceTree = "<group>";
 		};
+		EDE518892A98988900C16C9E /* IntroView */ = {
+			isa = PBXGroup;
+			children = (
+				EDE5188A2A9898A600C16C9E /* IntroPageViewController.swift */,
+				EDE5188C2A98996C00C16C9E /* PageViewController.swift */,
+			);
+			path = IntroView;
+			sourceTree = "<group>";
+		};
 		EDECE70E2A8F565D00E2877E /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,6 +432,7 @@
 			name = MediaProject;
 			packageProductDependencies = (
 				ED9936792A89444A0019EF3F /* Alamofire */,
+				EDE5188F2A989D0600C16C9E /* SnapKit */,
 			);
 			productName = MediaProject;
 			productReference = EDC378682A889DDC00F4EC12 /* MediaProject.app */;
@@ -447,6 +464,7 @@
 			mainGroup = EDC3785F2A889DDC00F4EC12;
 			packageReferences = (
 				ED9936782A89444A0019EF3F /* XCRemoteSwiftPackageReference "Alamofire" */,
+				EDE5188E2A989D0600C16C9E /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = EDC378692A889DDC00F4EC12 /* Products */;
 			projectDirPath = "";
@@ -488,6 +506,7 @@
 				ED96A82D2A8B003300104D44 /* APIableProtocol.swift in Sources */,
 				ED064FCD2A89EC5000C79FBF /* MovieManager.swift in Sources */,
 				EDC3788B2A89283900F4EC12 /* StoryboardInstantiableProtocol.swift in Sources */,
+				EDE5188B2A9898A600C16C9E /* IntroPageViewController.swift in Sources */,
 				ED96A82A2A8A4DC500104D44 /* InfoTableViewCell.swift in Sources */,
 				ED96A81C2A8A31C600104D44 /* Video.swift in Sources */,
 				EDC601962A8E3E420021FF3C /* VideoType.swift in Sources */,
@@ -517,6 +536,7 @@
 				EDDE759D2A8B09A100C3D536 /* Endpoint.swift in Sources */,
 				ED96A8222A8A3B0B00104D44 /* Cast.swift in Sources */,
 				ED96A8202A8A395B00104D44 /* ImageFetchableProtocol.swift in Sources */,
+				EDE5188D2A98996C00C16C9E /* PageViewController.swift in Sources */,
 				ED064FCA2A89EC2700C79FBF /* ManagerableProtocol.swift in Sources */,
 				EDECE7092A8F329800E2877E /* TVSeriesDetailDTO.swift in Sources */,
 				ED99367E2A89462E0019EF3F /* VideoAPI.swift in Sources */,
@@ -738,6 +758,14 @@
 				version = 5.7.1;
 			};
 		};
+		EDE5188E2A989D0600C16C9E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -745,6 +773,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = ED9936782A89444A0019EF3F /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		EDE5188F2A989D0600C16C9E /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDE5188E2A989D0600C16C9E /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
