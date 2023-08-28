@@ -16,10 +16,12 @@ final class MovieListViewController: BaseViewController,
     // MARK: - Properties
     
     private var movies: [Video] = []
+    private let mainView = MovieListView()
     
-    // MARK: - UI
-    
-    @IBOutlet private var movieListCollectionView: VideoListCollectionView!
+    // MARK: - Lifecycle
+    override func loadView() {
+        view = mainView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,8 +90,8 @@ private extension MovieListViewController {
     }
     
     func configureCollectionView() {
-        movieListCollectionView.delegate = self
-        movieListCollectionView.dataSource = self
+        mainView.movieListCollectionView.delegate = self
+        mainView.movieListCollectionView.dataSource = self
     }
     
     func fetchMovieList() {
@@ -101,7 +103,7 @@ private extension MovieListViewController {
                 )
                 let videos = trendListResponseDTO.toVideos()
                 movies = videos
-                movieListCollectionView.reloadData()
+                mainView.movieListCollectionView.reloadData()
             } catch {
                 presentAFError(error: error)
             }

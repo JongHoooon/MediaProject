@@ -11,6 +11,8 @@ final class VideoListCollectionView: UICollectionView {
     
     init() {
         super.init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        registerCell()
+        configureCollectionViewLayout()
     }
     
     required init?(coder: NSCoder) {
