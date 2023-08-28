@@ -9,7 +9,7 @@ import UIKit
 
 import Alamofire
 
-final class MovieListViewController: UIViewController,
+final class MovieListViewController: BaseViewController,
                                      StoryboardInstantiableProtocol,
                                      AlertableProtocol {
     
@@ -23,21 +23,16 @@ final class MovieListViewController: UIViewController,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        configureCollectionView()
-        
-        navigationItem.title = "영화 리스트"
-        navigationItem.backButtonTitle = ""
-        
         fetchMovieList()
-        
         if !UserDefaults.standard.bool(forKey: "isFirst") {
-            UserDefaults.standard.set(true, forKey: "isFirst")
-            let vc = IntroPageViewController()
-            let nav = UINavigationController(rootViewController: vc)
-            nav.modalPresentationStyle = .fullScreen
-            present(nav, animated: false)
+            showIntroView()
         }
+    }
+    
+    override func configureView() {
+        super.configureView()
+        configureCollectionView()
+        configureNavigationBar()
     }
 }
 
@@ -87,6 +82,11 @@ extension MovieListViewController: UICollectionViewDelegate {
 
 private extension MovieListViewController {
     
+    func configureNavigationBar() {
+        navigationItem.title = "영화 리스트"
+        navigationItem.backButtonTitle = ""
+    }
+    
     func configureCollectionView() {
         movieListCollectionView.delegate = self
         movieListCollectionView.dataSource = self
@@ -106,5 +106,13 @@ private extension MovieListViewController {
                 presentAFError(error: error)
             }
         }
+    }
+    
+    func showIntroView() {
+        UserDefaults.standard.set(true, forKey: "isFirst")
+        let vc = IntroPageViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: false)
     }
 }

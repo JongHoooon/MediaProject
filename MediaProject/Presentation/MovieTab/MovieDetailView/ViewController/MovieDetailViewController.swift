@@ -9,7 +9,7 @@ import UIKit
 
 import Alamofire
 
-final class MovieDetailViewController: UIViewController,
+final class MovieDetailViewController: BaseViewController,
                                        StoryboardInstantiableProtocol,
                                        AlertableProtocol {
     
@@ -42,12 +42,14 @@ final class MovieDetailViewController: UIViewController,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        fetchCredits(id: movieID)
+    }
+    
+    override func configureView() {
+        super.configureView()
         navigationItem.title = "출연/제작"
         titleLabel.text = movieTitle
         configureImageViews()
-        fetchCredits(id: movieID)
-        
         registerCell()
         configureTableView()
     }

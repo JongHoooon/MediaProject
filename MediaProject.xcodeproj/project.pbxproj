@@ -60,6 +60,9 @@
 		EDECE70B2A8F36B400E2877E /* TVDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDECE70A2A8F36B400E2877E /* TVDetail.swift */; };
 		EDECE70D2A8F54DC00E2877E /* genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDECE70C2A8F54DC00E2877E /* genre.swift */; };
 		EDECE7102A8F567D00E2877E /* VideoListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDECE70F2A8F567D00E2877E /* VideoListCollectionView.swift */; };
+		EDF94D9E2A9C65C9008589CB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF94D9D2A9C65C9008589CB /* BaseViewController.swift */; };
+		EDF94DA02A9C678E008589CB /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF94D9F2A9C678E008589CB /* BaseCollectionViewCell.swift */; };
+		EDF94DA22A9C67C7008589CB /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF94DA12A9C67C7008589CB /* BaseTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +119,9 @@
 		EDECE70A2A8F36B400E2877E /* TVDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVDetail.swift; sourceTree = "<group>"; };
 		EDECE70C2A8F54DC00E2877E /* genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = genre.swift; sourceTree = "<group>"; };
 		EDECE70F2A8F567D00E2877E /* VideoListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListCollectionView.swift; sourceTree = "<group>"; };
+		EDF94D9D2A9C65C9008589CB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		EDF94D9F2A9C678E008589CB /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		EDF94DA12A9C67C7008589CB /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +282,7 @@
 		EDC378812A88B34900F4EC12 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				EDF94D9A2A9C652F008589CB /* BaseView */,
 				EDE518892A98988900C16C9E /* IntroView */,
 				EDB0FA2D2A8E322E00861AC1 /* TabBarView */,
 				EDC6018C2A8E34C00021FF3C /* MovieTab */,
@@ -414,6 +421,16 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		EDF94D9A2A9C652F008589CB /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				EDF94D9D2A9C65C9008589CB /* BaseViewController.swift */,
+				EDF94D9F2A9C678E008589CB /* BaseCollectionViewCell.swift */,
+				EDF94DA12A9C67C7008589CB /* BaseTableViewCell.swift */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -508,6 +525,7 @@
 				EDC3788B2A89283900F4EC12 /* StoryboardInstantiableProtocol.swift in Sources */,
 				EDE5188B2A9898A600C16C9E /* IntroPageViewController.swift in Sources */,
 				ED96A82A2A8A4DC500104D44 /* InfoTableViewCell.swift in Sources */,
+				EDF94D9E2A9C65C9008589CB /* BaseViewController.swift in Sources */,
 				ED96A81C2A8A31C600104D44 /* Video.swift in Sources */,
 				EDC601962A8E3E420021FF3C /* VideoType.swift in Sources */,
 				EDD2FA9E2A91EAA90028CF9B /* SimilarTableViewCell.swift in Sources */,
@@ -527,6 +545,7 @@
 				EDC3788D2A89285A00F4EC12 /* ReusableProtocol.swift in Sources */,
 				EDC3786C2A889DDC00F4EC12 /* AppDelegate.swift in Sources */,
 				EDECE70B2A8F36B400E2877E /* TVDetail.swift in Sources */,
+				EDF94DA02A9C678E008589CB /* BaseCollectionViewCell.swift in Sources */,
 				ED9936682A893E420019EF3F /* TrendListResponseDTO.swift in Sources */,
 				EDC601902A8E34E60021FF3C /* TVListViewController.swift in Sources */,
 				EDECE70D2A8F54DC00E2877E /* genre.swift in Sources */,
@@ -534,6 +553,7 @@
 				EDDE759F2A8B0A1D00C3D536 /* Header.swift in Sources */,
 				ED96A81E2A8A35D400104D44 /* AlertableProtocol.swift in Sources */,
 				EDDE759D2A8B09A100C3D536 /* Endpoint.swift in Sources */,
+				EDF94DA22A9C67C7008589CB /* BaseTableViewCell.swift in Sources */,
 				ED96A8222A8A3B0B00104D44 /* Cast.swift in Sources */,
 				ED96A8202A8A395B00104D44 /* ImageFetchableProtocol.swift in Sources */,
 				EDE5188D2A98996C00C16C9E /* PageViewController.swift in Sources */,

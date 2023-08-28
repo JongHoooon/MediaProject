@@ -9,7 +9,7 @@ import UIKit
 
 import Alamofire
 
-final class MovieListCollectionViewCell: UICollectionViewCell {
+final class MovieListCollectionViewCell: BaseCollectionViewCell {
 
     // MARK: - Properties
     
@@ -30,17 +30,6 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        contentsBackgroundView.layer.cornerRadius = 8.0
-        contentsBackgroundView.clipsToBounds = true
-        
-        shadowView.layer.cornerRadius = 8.0
-        shadowView.layer.borderColor = UIColor.black.cgColor
-        shadowView.layer.shadowOpacity = 0.5
-        shadowView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        shadowView.layer.shadowRadius = 8.0
-        
-        separatorView.backgroundColor = .label
     }
     
     override func prepareForReuse() {
@@ -61,6 +50,19 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
         originalTitleLabel.text = item.originalTitle
         voteLabel.text = item.voteAverageText
         configureCastsLabel(id: item.id)
+    }
+    
+    override func configureView() {
+        contentsBackgroundView.layer.cornerRadius = 8.0
+        contentsBackgroundView.clipsToBounds = true
+        
+        shadowView.layer.cornerRadius = 8.0
+        shadowView.layer.borderColor = UIColor.black.cgColor
+        shadowView.layer.shadowOpacity = 0.5
+        shadowView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        shadowView.layer.shadowRadius = 8.0
+        
+        separatorView.backgroundColor = .label
     }
 }
 

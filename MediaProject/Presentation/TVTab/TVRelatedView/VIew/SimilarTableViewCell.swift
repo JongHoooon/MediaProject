@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SimilarTableViewCell: UITableViewCell {
+class SimilarTableViewCell: BaseTableViewCell {
 
     @IBOutlet var posterImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!

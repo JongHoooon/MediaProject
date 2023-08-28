@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailTableViewCell: UITableViewCell {
+class DetailTableViewCell: BaseTableViewCell {
 
     @IBOutlet private var profileImageView: UIImageView!
     @IBOutlet private var nameLabel: UILabel!
@@ -15,15 +15,10 @@ class DetailTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        profileImageView.layer.cornerRadius = 8.0
-        profileImageView.clipsToBounds = true
-        selectionStyle = .none
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        
         profileImageView.image = nil
     }
     
@@ -36,5 +31,11 @@ class DetailTableViewCell: UITableViewCell {
         )
         nameLabel.text = row.name
         infoLabel.text = row.character
+    }
+    
+    override func configureView() {
+        profileImageView.layer.cornerRadius = 8.0
+        profileImageView.clipsToBounds = true
+        selectionStyle = .none
     }
 }

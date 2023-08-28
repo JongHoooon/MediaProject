@@ -9,9 +9,9 @@ import UIKit
 
 import Alamofire
 
-final class TVListViewController: UIViewController,
-                                     StoryboardInstantiableProtocol,
-                                     AlertableProtocol {
+final class TVListViewController: BaseViewController,
+                                  StoryboardInstantiableProtocol,
+                                  AlertableProtocol {
     
     // MARK: - Properties
     
@@ -23,13 +23,14 @@ final class TVListViewController: UIViewController,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        fetchMovieList()
+    }
+    
+    override func configureView() {
+        super.configureView()
         configureCollectionView()
-        
         navigationItem.title = "영화 리스트"
         navigationItem.backButtonTitle = ""
-        
-        fetchMovieList()
     }
 }
 

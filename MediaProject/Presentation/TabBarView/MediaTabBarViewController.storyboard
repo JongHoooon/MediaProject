@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Media Tab Bar View Controller-->
         <scene sceneID="eQq-WC-Mli">
             <objects>
-                <tabBarController restorationIdentifier="MediaTabBarViewController" storyboardIdentifier="MediaTabBarViewController" id="zQR-WR-bcf" sceneMemberID="viewController">
+                <tabBarController restorationIdentifier="MediaTabBarViewController" storyboardIdentifier="MediaTabBarViewController" id="zQR-WR-bcf" customClass="MediaTabBarViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="et0-Bd-Pua">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

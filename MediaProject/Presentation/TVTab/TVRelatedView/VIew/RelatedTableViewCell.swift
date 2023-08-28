@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RelatedTableViewCell: UITableViewCell {
+class RelatedTableViewCell: BaseTableViewCell {
 
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var infoLabel: UILabel!

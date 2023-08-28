@@ -7,10 +7,9 @@
 
 import UIKit
 
-class InfoTableViewCell: UITableViewCell {
+final class InfoTableViewCell: BaseTableViewCell {
 
     // MARK: - Properties
-    
     var viewMoreButtonTapped: ((Bool) -> Void)?
     
     @IBOutlet private var viewMoreButton: UIButton!
@@ -52,7 +51,13 @@ class InfoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+    }
+
+    @IBAction func viewMoreButtonTapped(_ sender: UIButton) {
+            isViewMoreButtonTapped.toggle()
+       }
+    
+    override func configureView() {
         [
             separator1,
             separator2,
@@ -60,8 +65,4 @@ class InfoTableViewCell: UITableViewCell {
         ].forEach { $0?.backgroundColor = .separator }
         selectionStyle = .none
     }
-
-    @IBAction func viewMoreButtonTapped(_ sender: UIButton) {
-            isViewMoreButtonTapped.toggle()
-       }
 }

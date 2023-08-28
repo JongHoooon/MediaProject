@@ -9,7 +9,7 @@ import UIKit
 
 import Alamofire
 
-final class TVRelatedViewController: UIViewController,
+final class TVRelatedViewController: BaseViewController,
                                      StoryboardInstantiableProtocol,
                                      AlertableProtocol {
     
@@ -24,8 +24,13 @@ final class TVRelatedViewController: UIViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureTableView()
+        
         fetchRelatedInfos()
+    }
+    
+    override func configureView() {
+        super.configureView()
+        configureTableView()
     }
 }
 
