@@ -9,6 +9,12 @@ import UIKit
 
 class BaseTableViewCell: UITableViewCell {
     
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        configureView()
+        setupContstraints()
+    }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -16,7 +22,9 @@ class BaseTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         configureView()
+        setupContstraints()
     }
     
     func configureView() {}
+    func setupContstraints() {}
 }

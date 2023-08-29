@@ -20,13 +20,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let sb = UIStoryboard(
-            name: "MediaTabBarViewController",
-            bundle: nil
-        )
-        let vc = sb.instantiateViewController(
-            withIdentifier: "MediaTabBarViewController"
-        )
+//        let sb = UIStoryboard(
+//            name: "MediaTabBarViewController",
+//            bundle: nil
+//        )
+//        let vc = sb.instantiateViewController(
+//            withIdentifier: "MediaTabBarViewController"
+//        )
+        let vc = MediaTabBarViewController()
         window?.rootViewController = vc
         
         window?.makeKeyAndVisible()

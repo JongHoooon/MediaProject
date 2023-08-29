@@ -29,7 +29,7 @@ final class TVListViewController: BaseViewController,
     override func configureView() {
         super.configureView()
         configureCollectionView()
-        navigationItem.title = "영화 리스트"
+        navigationItem.title = "TV 리스트"
         navigationItem.backButtonTitle = ""
     }
 }
