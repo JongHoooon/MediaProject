@@ -52,15 +52,31 @@ extension MovieListViewController: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: MovieListCollectionViewCell.identifier,
-            for: indexPath
-        ) as? MovieListCollectionViewCell else { return UICollectionViewCell() }
+        
         
         let item = movies[indexPath.row]
-        cell.configureCell(with: item)
         
-        return cell
+        
+        switch item.mediaType {
+        case .movie:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: MovieListCollectionViewCell.identifier,
+                for: indexPath
+            ) as? MovieListCollectionViewCell else { return UICollectionViewCell() }
+            cell.configureCell(with: item)
+            return cell
+            
+        case .tv:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: TVListCollectionViewCell.identifier,
+                for: indexPath
+            ) as? TVListCollectionViewCell else { return UICollectionViewCell() }
+            cell.configureCell(with: item)
+            return cell
+            
+        default:
+            return UICollectionViewCell()
+        }
     }
 }
 
@@ -99,7 +115,7 @@ private extension MovieListViewController {
             do {
                 let trendListResponseDTO = try await MovieManager.shared.callRequest(
                     of: TrendListResponseDTO.self,
-                    movieAPI: .fetchTrendingVideo(type: .movie)
+                    movieAPI: .fetchTrendingVideo(type: .all)
                 )
                 let videos = trendListResponseDTO.toVideos()
                 movies = videos

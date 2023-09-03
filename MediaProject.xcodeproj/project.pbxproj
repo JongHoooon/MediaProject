@@ -20,6 +20,7 @@
 		ED3909322A9DFCB9005E2C61 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3909312A9DFCB9005E2C61 /* ProfileEditViewController.swift */; };
 		ED3909352A9DFCE5005E2C61 /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3909342A9DFCE5005E2C61 /* ProfileEditView.swift */; };
 		ED3909372A9E0477005E2C61 /* NSNotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3909362A9E0477005E2C61 /* NSNotificationName+Extension.swift */; };
+		ED86A98A2AA4C5DB008C3671 /* TVListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED86A9892AA4C5DB008C3671 /* TVListCollectionViewCell.swift */; };
 		ED9209532A8F682900EF32F4 /* TVSimilarResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9209522A8F682900EF32F4 /* TVSimilarResponseDTO.swift */; };
 		ED9209552A8F69A400EF32F4 /* RelatedVideoResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9209542A8F69A400EF32F4 /* RelatedVideoResponseDTO.swift */; };
 		ED9209582A8F6A3400EF32F4 /* RelatedVideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9209572A8F6A3400EF32F4 /* RelatedVideoInfo.swift */; };
@@ -88,6 +89,7 @@
 		ED3909312A9DFCB9005E2C61 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		ED3909342A9DFCE5005E2C61 /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
 		ED3909362A9E0477005E2C61 /* NSNotificationName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotificationName+Extension.swift"; sourceTree = "<group>"; };
+		ED86A9892AA4C5DB008C3671 /* TVListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVListCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED9209522A8F682900EF32F4 /* TVSimilarResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSimilarResponseDTO.swift; sourceTree = "<group>"; };
 		ED9209542A8F69A400EF32F4 /* RelatedVideoResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedVideoResponseDTO.swift; sourceTree = "<group>"; };
 		ED9209572A8F6A3400EF32F4 /* RelatedVideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedVideoInfo.swift; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 				EDC378872A8927BE00F4EC12 /* MovieListViewController.storyboard */,
 				EDC3788E2A892A4F00F4EC12 /* MovieListCollectionViewCell.swift */,
 				EDC3788F2A892A4F00F4EC12 /* MovieListCollectionViewCell.xib */,
+				ED86A9892AA4C5DB008C3671 /* TVListCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				ED064FC42A895AC600C79FBF /* DetailTableViewCell.swift in Sources */,
 				ED3909322A9DFCB9005E2C61 /* ProfileEditViewController.swift in Sources */,
 				ED9209552A8F69A400EF32F4 /* RelatedVideoResponseDTO.swift in Sources */,
+				ED86A98A2AA4C5DB008C3671 /* TVListCollectionViewCell.swift in Sources */,
 				ED9209582A8F6A3400EF32F4 /* RelatedVideoInfo.swift in Sources */,
 				EDC378862A88B38200F4EC12 /* MovieListViewController.swift in Sources */,
 				ED9936852A8957420019EF3F /* MovieDetailViewController.swift in Sources */,

@@ -32,6 +32,10 @@ extension VideoListCollectionView {
             nib,
             forCellWithReuseIdentifier: MovieListCollectionViewCell.identifier
         )
+        register(
+            TVListCollectionViewCell.self,
+            forCellWithReuseIdentifier: TVListCollectionViewCell.identifier
+        )
     }
     
     func configureCollectionViewLayout() {
