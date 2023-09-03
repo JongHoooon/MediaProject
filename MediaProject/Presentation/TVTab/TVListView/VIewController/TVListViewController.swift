@@ -82,18 +82,58 @@ private extension TVListViewController {
     }
     
     func fetchMovieList() {
-        Task {
-            do {
-                let trendListResponseDTO = try await MovieManager.shared.callRequest(
-                    of: TrendListResponseDTO.self,
-                    movieAPI: .fetchTrendingVideo(type: .tv)
-                )
-                let videos = trendListResponseDTO.toVideos()
-                tvSeriesList = videos
-                tvListCollectionView.reloadData()
-            } catch {
-                presentAFError(error: error)
+//        Task {
+//            do {
+//                let trendListResponseDTO = try await MovieManager.shared.callRequest(
+//                    of: TrendListResponseDTO.self,
+//                    movieAPI: .fetchTrendingVideo(type: .tv)
+//                )
+//                let videos = trendListResponseDTO.toVideos()
+//                tvSeriesList = videos
+//                tvListCollectionView.reloadData()
+//            } catch {
+//                presentAFError(error: error)
+//            }
+//        }
+        
+        let url = URL(string: "https://api.themoviedb.org/3/trending/tv/week")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "accept")
+        request.addValue("Bearer \(APIKey.authorization)", forHTTPHeaderField: "Authorization")
+        
+        URLSession.shared.dataTask(
+            with: request,
+            completionHandler: { [weak self] data, response, error in
+                
+                DispatchQueue.main.async {
+                    
+                    if let error = error {
+                        self?.presentSimpleAlert(message: error.localizedDescription)
+                        return
+                    }
+                    if let httpResponse = response as? HTTPURLResponse,
+                       !(200..<300 ~= httpResponse.statusCode) {
+                        self?.presentSimpleAlert(message: "Bad Status Code")
+                    }
+                    guard let data = data else {
+                        self?.presentSimpleAlert(message: "No Data")
+                        return
+                    }
+                    
+                    do {
+                        let value = try JSONDecoder().decode(
+                            TrendListResponseDTO.self,
+                            from: data
+                        )
+                        self?.tvSeriesList = value.toVideos()
+                        self?.tvListCollectionView.reloadData()
+                    } catch {
+                        self?.presentSimpleAlert(message: "Decoding Error")
+                    }
+                }
             }
-        }
+        )
+        .resume()
     }
 }
