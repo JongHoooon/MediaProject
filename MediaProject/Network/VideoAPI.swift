@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 enum VideoAPI: APIableProtocol {
-    case fetchTrendingVideo(type: VideoType)
+    case fetchTrendingVideo(type: MediaType)
     case fetchImage(url: String)
     case fetchCredits(id: Int)
     case fetchTVDetails(id: Int)

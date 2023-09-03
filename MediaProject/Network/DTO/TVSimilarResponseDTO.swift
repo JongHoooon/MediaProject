@@ -55,7 +55,7 @@ struct TVSimilarResponseDTO: Codable {
                 originalTitle: originalName ?? "",
                 overview: overview ?? "",
                 posterPath: posterPath ?? "",
-                mediaType: "",
+                mediaType: nil,
                 genreIDS: genreIDS ?? [],
                 popularity: popularity ?? 0,
                 releaseDate: firstAirDate ?? "",

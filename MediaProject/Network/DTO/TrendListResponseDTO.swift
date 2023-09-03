@@ -62,6 +62,7 @@ struct TrendListResponseDTO: Codable {
             if let name = name {
                 videoTitle = name
             }
+            let mediaType = MediaType(rawValue: mediaType ?? "")
             
             return Video(
                 adult: self.adult ?? false,
@@ -71,7 +72,7 @@ struct TrendListResponseDTO: Codable {
                 originalTitle: self.originalTitle ?? "",
                 overview: self.overview ?? "",
                 posterPath: self.posterPath ?? "",
-                mediaType: self.mediaType ?? "",
+                mediaType: mediaType,
                 genreIDS: self.genreIDS ?? [],
                 popularity: self.popularity ?? 0,
                 releaseDate: self.releaseDate ?? "",

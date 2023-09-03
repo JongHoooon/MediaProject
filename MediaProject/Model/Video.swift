@@ -13,7 +13,7 @@ struct Video {
     let originalTitle: String
     let overview: String
     let posterPath: String
-    let mediaType: String
+    let mediaType: MediaType?
     let genreIDS: [Int]
     let popularity: Double
     let releaseDate: String

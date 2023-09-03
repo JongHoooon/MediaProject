@@ -19,7 +19,6 @@ final class ProfileEditViewController: BaseViewController {
     
     weak var delegate: ChangeNickNameDelegate?
     var changeGender: ((String) -> Void)?
-    #warning("클로저는 순환참조 어떻게??")
         
     // MARK: - Init
     init(editCategory: ProfileEditCategory) {
